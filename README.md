@@ -83,13 +83,13 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=brijrajk&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117" height="165"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=brijrajk&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400&rank_icon=github" height="165"/>
   &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=brijrajk&layout=compact&theme=github_dark&hide_border=true&title_color=58a6ff&text_color=c9d1d9&bg_color=0d1117" height="165"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=brijrajk&layout=compact&theme=github_dark&hide_border=true&title_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400&langs_count=8" height="165"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=brijrajk&theme=github-dark-blue&hide_border=true&stroke=58a6ff&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff" height="165"/>
+  <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="165"/>
 </p>
 
 ---
@@ -135,6 +135,8 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 | PR | Description |
 |----|-------------|
 | [#185694](https://github.com/pytorch/pytorch/pull/185694) | Improve `infer_schema` error message when future annotations cause `NameError` |
+| [#185751](https://github.com/pytorch/pytorch/pull/185751) | Raise `ValueError` early for invalid `(ndim, pad_size)` in non-constant `F.pad` modes |
+| [#185756](https://github.com/pytorch/pytorch/pull/185756) | Fix `float16` scalar overflow check inconsistency between CPU and GPU in `clamp` |
 
 ---
 
