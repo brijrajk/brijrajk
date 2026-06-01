@@ -1,24 +1,15 @@
 import json, subprocess, re
+from collections import defaultdict
 
-# Add any PR here — (repo, number, description)
-PRS = [
-    # PyTorch
-    ("pytorch/pytorch", 185694, "Fix `infer_schema` error message when `from __future__ import annotations` causes `NameError`"),
-    ("pytorch/pytorch", 185751, "Fix `F.pad` raising `NotImplementedError` instead of `ValueError` for invalid `(ndim, pad_size)` in non-constant modes"),
-    ("pytorch/pytorch", 185756, "Fix `torch.clamp` float16 scalar overflow check inconsistency between CPU and GPU"),
-    # Gluten
-    ("apache/gluten", 12158, "Fix silently-skipped math/scalar test suites; add Velox native tests for `sin`, `tan`, `tanh`, `radians`, `ln`"),
-    ("apache/gluten", 12151, "Fix bloom-filter bytes corruption on whole-stage AQE fallback"),
-    # Velox
-    ("facebookincubator/velox", 17677, "test(parquet): Verify `WriterOptions::encoding` is forwarded to Arrow writer"),
-    ("facebookincubator/velox", 17676, "docs: Fix duplicate object description warnings in Sphinx doc build"),
-    ("facebookincubator/velox", 17675, "docs(geospatial): Expand `convex_hull_agg` and `geometry_union_agg` docs"),
-    ("facebookincubator/velox", 17669, "feat(sparksql): Register `transform_values` in sparksql map functions registry"),
-    # Spark
-    ("apache/spark", 56178, "[PYTHON] Support string representation of `durationMs` in `GroupState.setTimeoutDuration`"),
-    ("apache/spark", 56174, "[PYTHON] Throw structured error when reading Protobuf descriptor file fails"),
-    ("apache/spark", 56154, "[DOCS] Fix inaccurate documentation of `RuntimeConfig.get`"),
-]
+AUTHOR = "brijrajk"
+
+# Repos to skip (forks noise, personal experiments, etc.)
+SKIP_REPOS = {
+    "brijrajk/pytorch",
+    "brijrajk/spark",
+    "brijrajk/facebook-velox",
+    "brijrajk/incubator-gluten",
+}
 
 REPO_DISPLAY = {
     "pytorch/pytorch":          ("🤖", "PyTorch"),
@@ -27,50 +18,70 @@ REPO_DISPLAY = {
     "apache/spark":             ("🔥", "Apache Spark"),
 }
 
+def search_prs():
+    """Fetch all PRs opened by AUTHOR across all of GitHub."""
+    prs = []
+    page = 1
+    while True:
+        out = subprocess.check_output([
+            "gh", "api",
+            f"search/issues?q=author:{AUTHOR}+type:pr&per_page=100&page={page}",
+            "--jq", ".items[] | {repo: (.repository_url | split(\"/\") | .[-2:] | join(\"/\")), number: .number, title: .title, state: .state}"
+        ])
+        items = [json.loads(line) for line in out.decode().strip().splitlines() if line]
+        if not items:
+            break
+        prs.extend(items)
+        page += 1
+        if len(items) < 100:
+            break
+    return [p for p in prs if p["repo"] not in SKIP_REPOS]
 
-REPO_DISPLAY = {
-    "pytorch/pytorch": "PyTorch",
-    "apache/spark": "Apache Spark",
-    "facebookincubator/velox": "Velox",
-    # add display names for any repo you contribute to
-}
-
-def get_pr_status(repo, number):
-    out = subprocess.check_output(
-        ["gh", "api", f"repos/{repo}/pulls/{number}",
-         "--jq", "{state: .state, merged_at: .merged_at}"]
-    )
-    data = json.loads(out)
-    if data["merged_at"]:
+def get_pr_status(repo, number, state):
+    if state == "open":
+        return "🔄 Open"
+    # closed — check if actually merged
+    out = subprocess.check_output([
+        "gh", "api", f"repos/{repo}/pulls/{number}",
+        "--jq", ".merged_at"
+    ]).decode().strip()
+    if out and out != "null":
         return "✅ Merged"
-    if data["state"] == "closed":
-        for branch in ["main", "master"]:
-            result = subprocess.run(
-                ["gh", "api", f"repos/{repo}/commits?sha={branch}&per_page=100",
-                 "--jq", f'[.[].commit.message] | any(contains("#{number}"))'],
-                capture_output=True, text=True
-            )
-            if result.stdout.strip() == "true":
-                return "✅ Merged"
-        return "❌ Closed"
-    return "🔄 Open"
+    # pytorchbot / custom merge bots squash without setting merged_at
+    for branch in ["main", "master"]:
+        result = subprocess.run(
+            ["gh", "api", f"repos/{repo}/commits?sha={branch}&per_page=100",
+             "--jq", f'[.[].commit.message] | any(contains("#{number}"))'],
+            capture_output=True, text=True
+        )
+        if result.stdout.strip() == "true":
+            return "✅ Merged"
+    return "❌ Closed"
 
-# Group PRs by repo
-from collections import defaultdict
+# Discover all PRs automatically
+all_prs = search_prs()
+
+# Group by repo
 by_repo = defaultdict(list)
-for repo, number, description in PRS:
-    status = get_pr_status(repo, number)
-    url = f"https://github.com/{repo}/pull/{number}"
-    by_repo[repo].append(f"| [#{number}]({url}) | {description} | {status} |")
+for pr in all_prs:
+    repo = pr["repo"]
+    status = get_pr_status(repo, pr["number"], pr["state"])
+    url = f"https://github.com/{repo}/pull/{pr['number']}"
+    by_repo[repo].append((pr["number"], url, pr["title"], status))
 
-# Build the full section
+# Sort each repo's PRs newest first
+for repo in by_repo:
+    by_repo[repo].sort(key=lambda x: x[0], reverse=True)
+
+# Build the table section
 lines = []
-for repo, rows in by_repo.items():
-    name = REPO_DISPLAY.get(repo, repo)
-    lines.append(f"### {name} ({repo})")
+for repo, prs in sorted(by_repo.items()):
+    emoji, name = REPO_DISPLAY.get(repo, ("📦", repo))
+    lines.append(f"### {emoji} {name} ({repo})")
     lines.append("| PR | Description | Status |")
     lines.append("|----|-------------|--------|")
-    lines.extend(rows)
+    for number, url, title, status in prs:
+        lines.append(f"| [#{number}]({url}) | {title} | {status} |")
     lines.append("")
 
 new_section = "<!-- CONTRIBUTIONS_START -->\n" + "\n".join(lines) + "<!-- CONTRIBUTIONS_END -->"
@@ -83,4 +94,4 @@ updated = re.sub(
     flags=re.DOTALL
 )
 open("README.md", "w").write(updated)
-print("Done.")
+print(f"Updated README with {len(all_prs)} PRs across {len(by_repo)} repos.")
