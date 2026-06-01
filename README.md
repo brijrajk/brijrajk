@@ -111,7 +111,7 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 Active contributor to major Big Data and systems projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch ecosystem.
 
 <!-- CONTRIBUTIONS_START -->
-### 🤖 PyTorch (pytorch/pytorch)
+### 🤖 PyTorch — ✅ Merged Contributor
 | PR | Description | Status |
 |----|-------------|--------|
 | [#185694](https://github.com/pytorch/pytorch/pull/185694) | Fix `infer_schema` error message when `from __future__ import annotations` causes `NameError` | ✅ Merged |
