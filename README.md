@@ -110,6 +110,14 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 
 Active contributor to major Big Data and systems projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch ecosystem.
 
+### 🤖 PyTorch (pytorch/pytorch)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#185694](https://github.com/pytorch/pytorch/pull/185694) | Fix `infer_schema` error message when `from __future__ import annotations` causes `NameError` | ✅ Merged |
+| [#185751](https://github.com/pytorch/pytorch/pull/185751) | Fix `F.pad` raising `NotImplementedError` instead of `ValueError` for invalid `(ndim, pad_size)` in non-constant modes | 🔄 Open |
+| [#185756](https://github.com/pytorch/pytorch/pull/185756) | Fix `torch.clamp` float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
+
+
 ### 🚀 Apache Gluten
 | PR | Description |
 |----|-------------|
@@ -131,12 +139,7 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 | [#56174](https://github.com/apache/spark/pull/56174) | [PYTHON] Throw structured error when reading Protobuf descriptor file fails |
 | [#56154](https://github.com/apache/spark/pull/56154) | [DOCS] Fix inaccurate documentation of `RuntimeConfig.get` |
 
-### 🤖 PyTorch
-| PR | Description |
-|----|-------------|
-| [#185694](https://github.com/pytorch/pytorch/pull/185694) | Improve `infer_schema` error message when future annotations cause `NameError` |
-| [#185751](https://github.com/pytorch/pytorch/pull/185751) | Raise `ValueError` early for invalid `(ndim, pad_size)` in non-constant `F.pad` modes |
-| [#185756](https://github.com/pytorch/pytorch/pull/185756) | Fix `float16` scalar overflow check inconsistency between CPU and GPU in `clamp` |
+
 
 ---
 
