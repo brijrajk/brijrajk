@@ -12,7 +12,14 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Debug - list files
+        run: find .github -type f
 
+      - name: Update PyTorch contributions table
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/update_contributions.py
       - name: Update PyTorch contributions table
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
