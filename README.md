@@ -110,6 +110,7 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 
 Active contributor to major Big Data and systems projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch ecosystem.
 
+<!-- CONTRIBUTIONS_START -->
 ### 🤖 PyTorch (pytorch/pytorch)
 | PR | Description | Status |
 |----|-------------|--------|
@@ -117,29 +118,27 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 | [#185751](https://github.com/pytorch/pytorch/pull/185751) | Fix `F.pad` raising `NotImplementedError` instead of `ValueError` for invalid `(ndim, pad_size)` in non-constant modes | 🔄 Open |
 | [#185756](https://github.com/pytorch/pytorch/pull/185756) | Fix `torch.clamp` float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
 
+### 🚀 Apache Gluten (apache/gluten)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#12158](https://github.com/apache/gluten/pull/12158) | Fix silently-skipped math/scalar test suites; add Velox native tests for `sin`, `tan`, `tanh`, `radians`, `ln` | 🔄 Open |
+| [#12151](https://github.com/apache/gluten/pull/12151) | Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
 
-### 🚀 Apache Gluten
-| PR | Description |
-|----|-------------|
-| [#12158](https://github.com/apache/gluten/pull/12158) | Fix silently-skipped math/scalar test suites; add Velox native tests for `sin`, `tan`, `tanh`, `radians`, `ln` |
-| [#12151](https://github.com/apache/gluten/pull/12151) | Fix bloom-filter bytes corruption on whole-stage AQE fallback |
+### 🧠 Velox (facebookincubator/velox)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify `WriterOptions::encoding` is forwarded to Arrow writer | 🔄 Open |
+| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | 🔄 Open |
+| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand `convex_hull_agg` and `geometry_union_agg` docs | 🔄 Open |
+| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register `transform_values` in sparksql map functions registry | 🔄 Open |
 
-### 🧠 Velox (Meta)
-| PR | Description |
-|----|-------------|
-| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify `WriterOptions::encoding` is forwarded to Arrow writer |
-| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build |
-| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand `convex_hull_agg` and `geometry_union_agg` docs |
-| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register `transform_values` in sparksql map functions registry |
-
-### 🔥 Apache Spark
-| PR | Description |
-|----|-------------|
-| [#56178](https://github.com/apache/spark/pull/56178) | [PYTHON] Support string representation of `durationMs` in `GroupState.setTimeoutDuration` |
-| [#56174](https://github.com/apache/spark/pull/56174) | [PYTHON] Throw structured error when reading Protobuf descriptor file fails |
-| [#56154](https://github.com/apache/spark/pull/56154) | [DOCS] Fix inaccurate documentation of `RuntimeConfig.get` |
-
-
+### 🔥 Apache Spark (apache/spark)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#56178](https://github.com/apache/spark/pull/56178) | [PYTHON] Support string representation of `durationMs` in `GroupState.setTimeoutDuration` | 🔄 Open |
+| [#56174](https://github.com/apache/spark/pull/56174) | [PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
+| [#56154](https://github.com/apache/spark/pull/56154) | [DOCS] Fix inaccurate documentation of `RuntimeConfig.get` | 🔄 Open |
+<!-- CONTRIBUTIONS_END -->
 
 ---
 
