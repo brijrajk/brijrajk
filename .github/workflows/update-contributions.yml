@@ -13,15 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Debug - list files
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "All files in .github:"
-          find .github -type f
-          echo "Root files:"
-          ls -la
-
       - name: Update PyTorch contributions table
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
