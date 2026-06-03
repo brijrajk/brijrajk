@@ -48,6 +48,8 @@
 
 <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="100%"/>
 <br/>
+<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=brijrajk&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&include_all_commits=true" width="100%"/>
+<br/>
 <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" width="100%"/>
 
 </td>
