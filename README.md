@@ -111,13 +111,6 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 Active contributor to major Big Data and systems projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch ecosystem.
 
 <!-- CONTRIBUTIONS_START -->
-### 🤖 PyTorch (pytorch/pytorch)
-| PR | Description | Status |
-|----|-------------|--------|
-| [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
-| [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
-| [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ❌ Closed |
-
 ### 🚀 Apache Gluten (apache/gluten)
 | PR | Description | Status |
 |----|-------------|--------|
@@ -130,7 +123,7 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 |----|-------------|--------|
 | [#56250](https://github.com/apache/spark/pull/56250) | [SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except | 🔄 Open |
 | [#56248](https://github.com/apache/spark/pull/56248) | [SPARK-34679][DOCS] Add inferTimestamp option to JSON data source options table | 🔄 Open |
-| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
+| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
 | [#56174](https://github.com/apache/spark/pull/56174) | [SPARK-43847][PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
 | [#56154](https://github.com/apache/spark/pull/56154) | [SPARK-49798][DOCS] Fix inaccurate documentation of RuntimeConfig.get | 🔄 Open |
 
@@ -153,6 +146,12 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 |----|-------------|--------|
 | [#2336](https://github.com/google/it-cert-automation-practice/pull/2336) | Closes: #1 | 🔄 Open |
 
+### 🤖 PyTorch (pytorch/pytorch)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
+| [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
+| [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ✅ Merged |
 
 ### 📦 vllm-project/vllm (vllm-project/vllm)
 | PR | Description | Status |
