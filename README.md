@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=120&section=header&text=BRIJ%20RAJ%20KISHORE&fontSize=36&fontColor=58a6ff&fontAlignY=65&animation=fadeIn&desc=Senior%20MTS%20%7C%20Big%20Data%20%7C%20LLM%20Acceleration%20%7C%20Systems%20Engineer&descAlignY=85&descSize=13&descColor=8b949e"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=130&section=header&text=BRIJ%20RAJ%20KISHORE&fontSize=40&fontColor=58a6ff&fontAlignY=60&animation=fadeIn&desc=Senior%20MTS%20%7C%20Big%20Data%20%7C%20LLM%20Acceleration%20%7C%20Systems%20Engineer&descAlignY=80&descSize=14&descColor=8b949e"/>
 </p>
 
 <p align="center">
@@ -12,6 +12,8 @@
   </a>
   &nbsp;
   <img height="28" src="https://img.shields.io/badge/India-🇮🇳-1a2332?style=for-the-badge"/>
+  &nbsp;
+  <img height="28" src="https://img.shields.io/badge/NIT%20Nagpur-M.Tech%20CS-1a2332?style=for-the-badge&logo=academia&logoColor=58a6ff"/>
 </p>
 
 <p align="center">
@@ -81,8 +83,6 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 </p>
 
 **Specialized domains:** Apache Spark · Apache Gluten · Velox · PyTorch OOT Backends · vLLM · LLM Acceleration · FPGA (Xilinx/AMD) · Data Analytics · Data Engineering · Parquet/Arrow · Column-store engines · Query optimization
-
----
 
 ---
 
@@ -175,6 +175,14 @@ My pinned repos include forks of the projects I actively work in:
 
 ---
 
+## 💬 Dev Quote
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=The%20best%20performance%20improvement%20is%20the%20transition%20from%20the%20nonworking%20state%20to%20the%20working%20state&author=John%20Ousterhout" />
+</p>
+
+---
+
 ## 🐍 Contribution Snake
 
 <p align="center">
@@ -183,6 +191,24 @@ My pinned repos include forks of the projects I actively work in:
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake.svg"/>
     <img alt="github-snake" src="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg"/>
   </picture>
+</p>
+
+---
+
+## 🤝 Connect With Me
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/brijrajkishore/">
+    <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="mailto:brijrajk@github.com">
+    <img src="https://img.shields.io/badge/Drop%20a%20Mail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+</p>
+
+<p align="center">
+  <i>Open to conversations on Big Data infrastructure, accelerated computing & LLM systems.</i>
 </p>
 
 ---
