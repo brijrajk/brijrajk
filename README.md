@@ -14,6 +14,12 @@
   <img height="28" src="https://img.shields.io/badge/India-🇮🇳-1a2332?style=for-the-badge"/>
 </p>
 
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Senior+MTS+%40+Zettabolt+Technologies;Apache+Spark+%7C+Velox+%7C+Gluten+%7C+PyTorch+OOT;LLM+Acceleration+%7C+FPGA+%7C+C%2B%2B;Open+Source+Contributor+%F0%9F%8C%8D;From+query+engines+to+transformer+kernels+%E2%9A%A1" alt="Typing SVG" />
+  </a>
+</p>
+
 ---
 
 ```yaml
@@ -58,17 +64,14 @@ I work at the intersection of **high-performance computing**, **accelerated anal
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg" width="42" height="42" alt="Scala" title="Scala"/>
   &nbsp;
-  <!-- Big Data -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" width="42" height="42" alt="Kafka" title="Apache Kafka"/>
   &nbsp;
-  <!-- Cloud & Infra -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="42" height="42" alt="AWS" title="AWS"/>
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="42" height="42" alt="Docker" title="Docker"/>
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="42" height="42" alt="Kubernetes" title="Kubernetes"/>
   &nbsp;
-  <!-- Dev Tools -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="42" height="42" alt="Linux" title="Linux"/>
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="42" height="42" alt="Git" title="Git"/>
@@ -77,6 +80,14 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 </p>
 
 **Specialized domains:** Apache Spark · Apache Gluten · Velox · PyTorch OOT Backends · LLM Acceleration · FPGA (Xilinx/AMD) · Data Analytics · Data Engineering · Parquet/Arrow · Column-store engines · Query optimization
+
+---
+
+## 🏆 GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=brijrajk&theme=algolia&no-frame=true&no-bg=true&margin-w=6&column=7"/>
+</p>
 
 ---
 
@@ -90,6 +101,14 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="165"/>
+</p>
+
+---
+
+## 📈 Contribution Activity
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=brijrajk&theme=github-compact&hide_border=true&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff&area=true&area_color=1f6feb"/>
 </p>
 
 ---
@@ -108,56 +127,9 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 
 ## 🌍 Open Source Contributions
 
-Active contributor to major Big Data and systems projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch ecosystem.
+Active contributor to major Big Data and AI projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch/vLLM ecosystem.
 
 <!-- CONTRIBUTIONS_START -->
-### 🤖 PyTorch
-| PR | Description | Status |
-|----|-------------|--------|
-| [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ✅ Merged |
-| [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
-| [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
-
-### ⚡ vLLM
-| PR | Description | Status |
-|----|-------------|--------|
-| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate Step3VL under Transformers v5 | 🔄 Open |
-
-### 🚀 Apache Gluten
-| PR | Description | Status |
-|----|-------------|--------|
-| [#12199](https://github.com/apache/gluten/pull/12199) | [MINOR][VL] Re-enable stale ignored atan2 test in MathFunctionsValidateSuite | 🔄 Open |
-| [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | 🔄 Open |
-| [#12151](https://github.com/apache/gluten/pull/12151) | [GLUTEN-12013][VL] Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
-
-### 🧠 Velox
-| PR | Description | Status |
-|----|-------------|--------|
-| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer | ✅ Merged |
-| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | ✅ Merged |
-| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs | ✅ Merged |
-| [#17668](https://github.com/facebookincubator/velox/pull/17668) | perf(tpcds): Eliminate redundant map allocations in toTableName and fromTableName | ✅ Merged |
-| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register transform_values in sparksql map functions registry | 🔄 Open |
-
-### 🔥 Apache Spark
-| PR | Description | Status |
-|----|-------------|--------|
-| [#56250](https://github.com/apache/spark/pull/56250) | [SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except | 🔄 Open |
-| [#56248](https://github.com/apache/spark/pull/56248) | [SPARK-34679][DOCS] Add inferTimestamp option to JSON data source options table | 🔄 Open |
-| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
-| [#56174](https://github.com/apache/spark/pull/56174) | [SPARK-43847][PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
-| [#56154](https://github.com/apache/spark/pull/56154) | [SPARK-49798][DOCS] Fix inaccurate documentation of RuntimeConfig.get | 🔄 Open |
-
-### 📦 aws-samples/aws-etl-orchestrator
-| PR | Description | Status |
-|----|-------------|--------|
-| [#9](https://github.com/aws-samples/aws-etl-orchestrator/pull/9) | Migrate to Python3.12 | 🔄 Open |
-
-### 📦 google/it-cert-automation-practice
-| PR | Description | Status |
-|----|-------------|--------|
-| [#2336](https://github.com/google/it-cert-automation-practice/pull/2336) | Closes: #1 | 🔄 Open |
-
 <!-- CONTRIBUTIONS_END -->
 
 ---
@@ -172,6 +144,18 @@ My pinned repos include forks of the projects I actively work in:
 - 🧠 [facebookincubator/velox](https://github.com/brijrajk/facebook-velox) — C++ vectorized execution engine
 - 🔥 [apache/spark](https://github.com/brijrajk/spark) — Distributed analytics engine
 - 🤖 [pytorch/pytorch](https://github.com/brijrajk/pytorch) — OOT device backend work
+
+---
+
+## 🐍 Contribution Snake
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake.svg"/>
+    <img alt="github-snake" src="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg"/>
+  </picture>
+</p>
 
 ---
 
