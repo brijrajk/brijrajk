@@ -13,9 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Update PyTorch contributions table
+      - name: Setup GitHub CLI
+        run: gh --version || sudo apt-get install gh -y
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update contributions table
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/update_contributions.py
 
       - name: Commit if changed
