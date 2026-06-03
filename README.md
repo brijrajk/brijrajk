@@ -108,6 +108,14 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 
 ---
 
+## 📊 Detailed GitHub Metrics
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/brijrajk/brijrajk/main/github-metrics.svg" alt="GitHub Metrics"/>
+</p>
+
+---
+
 ## 🌱 Currently Exploring
 
 ```
