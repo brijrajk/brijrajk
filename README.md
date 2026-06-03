@@ -24,33 +24,33 @@
 
 ---
 
-```yaml
-# whoami
-name        : Brij Raj Kishore
-role        : Senior Member of Technical Staff (SMTS)
-company     : Zettabolt Technologies Private Limited
-experience  : 5+ years in distributed computing & systems engineering
-location    : India
-status      : Building the future of accelerated data & AI infrastructure
-focus       : "From Big Data to LLMs — acceleration at every layer of the stack"
-```
+<table>
+<tr>
+<td valign="top" width="55%">
 
----
+### 👋 About Me
 
-## ⚡ What I Do
+- 🏢 **Senior MTS** @ Zettabolt Technologies Pvt. Ltd.
+- 🎓 M.Tech Computer Science — NIT Nagpur
+- 🌍 Based in India
+- 🔥 Working on **Apache Spark**, **Meta Velox** & **Apache Gluten** for native query acceleration
+- 🤖 Building **PyTorch OOT** device backends for LLM acceleration on custom hardware
+- ⚡ Contributing to **vLLM** — high-throughput LLM inference engine
+- 🔌 **FPGA / Xilinx** — hardware-accelerated data pipelines
+- 🧠 5x speedup on Spark via Neuroblade SPU integration (now @ AWS)
+- 🛠️ Built **ZettaProf** — Spark profiling tool that cuts debug time by 60%
+- 🌱 Active OSS contributor — Apache Spark, Gluten, Velox, PyTorch, vLLM
+- 💬 Ask me about **Big Data, C++, LLM infra, distributed systems**
+- ⚡ Fun fact: I push query engines into silicon 🔌
 
-I work at the intersection of **high-performance computing**, **accelerated analytics**, **LLM infrastructure**, and **distributed data systems**. My stack lives close to the metal — from FPGA accelerators and custom PyTorch backends to query engine internals.
+</td>
+<td valign="top" width="45%">
 
-- 🔥 **Apache Spark** — distributed query execution, performance tuning, custom extensions
-- 🧠 **Velox** — Meta's vectorized execution engine, pushing query performance limits
-- 🚀 **Apache Gluten** — Spark native execution acceleration, offloading query execution to Velox/Arrow backends
-- 🤖 **LLM Acceleration** — PyTorch internals, Out-of-Tree (OOT) device support, custom accelerator backends
-- ⚡ **vLLM** — high-throughput LLM inference engine, contributing to test infrastructure and Transformers compatibility
-- ⚙️ **C++** — low-latency systems, memory-efficient data path engineering
-- 🔌 **FPGA / Xilinx** — hardware-accelerated data processing pipelines
-- 🌐 **Big Data Architecture** — large-scale ETL, lakehouse patterns, data infrastructure
-- 📊 **Data Analytics** — large-scale analytical workloads, query optimization, business intelligence pipelines
-- 🏗️ **Data Engineering** — robust data pipelines, ingestion frameworks, lakehouse & warehouse design
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="coding gif"/>
+
+</td>
+</tr>
+</table>
 
 ---
 
