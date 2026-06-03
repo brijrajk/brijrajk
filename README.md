@@ -84,18 +84,6 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 
 ---
 
-## 🏆 GitHub Achievements
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=brijrajk&theme=nord_dark" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=brijrajk&theme=nord_dark" height="180"/>
-  &nbsp;&nbsp;
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=brijrajk&theme=nord_dark&utcOffset=5.5" height="180"/>
-</p>
-
 ---
 
 ## 📊 GitHub Stats
