@@ -46,7 +46,7 @@
 </td>
 <td valign="top" width="45%">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="coding gif"/>
+<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="100%" alt="coding gif"/>
 
 </td>
 </tr>
