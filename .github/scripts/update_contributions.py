@@ -98,8 +98,15 @@ for pr in all_prs:
     by_repo[repo].append((pr["number"], url, pr["title"], status))
 
 # Sort each repo's PRs newest first
+# Sort each repo's PRs — Merged first, then Open, then Closed, newest first within each
+STATUS_PRIORITY = {
+    "✅ Merged": 0,
+    "🔄 Open":   1,
+    "❌ Closed": 2,
+}
+
 for repo in by_repo:
-    by_repo[repo].sort(key=lambda x: x[0], reverse=True)
+    by_repo[repo].sort(key=lambda x: (STATUS_PRIORITY.get(x[3], 9), -x[0]))
 
 # Build tables — fixed order first, then auto-detected new repos
 lines = []
