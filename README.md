@@ -135,7 +135,7 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 ### 🧠 Velox (facebookincubator/velox)
 | PR | Description | Status |
 |----|-------------|--------|
-| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer | 🔄 Open |
+| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer | ✅ Merged |
 | [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | ✅ Merged |
 | [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs | ✅ Merged |
 | [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register transform_values in sparksql map functions registry | 🔄 Open |
@@ -152,6 +152,11 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 | [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
 | [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
 | [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ❌ Closed |
+
+### 📦 vllm-project/vllm (vllm-project/vllm)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate Step3VL under Transformers v5 | 🔄 Open |
 <!-- CONTRIBUTIONS_END -->
 
 ---
