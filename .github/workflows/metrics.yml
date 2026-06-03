@@ -33,7 +33,5 @@ jobs:
           plugin_notable: yes
           plugin_notable_from: organization
           plugin_notable_types: commit
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
           output_action: commit
           filename: github-metrics.svg
