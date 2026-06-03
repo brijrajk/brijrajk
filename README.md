@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Senior+MTS+%40+Zettabolt+Technologies;Apache+Spark+%7C+Velox+%7C+Gluten+%7C+PyTorch+OOT;LLM+Acceleration+%7C+FPGA+%7C+C%2B%2B;Open+Source+Contributor+%F0%9F%8C%8D;From+query+engines+to+transformer+kernels+%E2%9A%A1" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Senior+MTS+%40+Zettabolt+Technologies;Apache+Spark+%7C+Velox+%7C+Gluten+%7C+PyTorch+OOT;LLM+Acceleration+%7C+vLLM+%7C+FPGA+%7C+C%2B%2B;Open+Source+Contributor+%F0%9F%8C%8D;From+query+engines+to+transformer+kernels+%E2%9A%A1" alt="Typing SVG" />
   </a>
 </p>
 
@@ -43,6 +43,7 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 - 🧠 **Velox** — Meta's vectorized execution engine, pushing query performance limits
 - 🚀 **Apache Gluten** — Spark native execution acceleration, offloading query execution to Velox/Arrow backends
 - 🤖 **LLM Acceleration** — PyTorch internals, Out-of-Tree (OOT) device support, custom accelerator backends
+- ⚡ **vLLM** — high-throughput LLM inference engine, contributing to test infrastructure and Transformers compatibility
 - ⚙️ **C++** — low-latency systems, memory-efficient data path engineering
 - 🔌 **FPGA / Xilinx** — hardware-accelerated data processing pipelines
 - 🌐 **Big Data Architecture** — large-scale ETL, lakehouse patterns, data infrastructure
@@ -79,7 +80,7 @@ I work at the intersection of **high-performance computing**, **accelerated anal
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" width="42" height="42" alt="CMake" title="CMake"/>
 </p>
 
-**Specialized domains:** Apache Spark · Apache Gluten · Velox · PyTorch OOT Backends · LLM Acceleration · FPGA (Xilinx/AMD) · Data Analytics · Data Engineering · Parquet/Arrow · Column-store engines · Query optimization
+**Specialized domains:** Apache Spark · Apache Gluten · Velox · PyTorch OOT Backends · vLLM · LLM Acceleration · FPGA (Xilinx/AMD) · Data Analytics · Data Engineering · Parquet/Arrow · Column-store engines · Query optimization
 
 ---
 
@@ -130,6 +131,39 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 Active contributor to major Big Data and AI projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch/vLLM ecosystem.
 
 <!-- CONTRIBUTIONS_START -->
+### 🤖 PyTorch
+| PR | Description | Status |
+|----|-------------|--------|
+| [#185694](https://github.com/pytorch/pytorch/pull/185694) | Improve `infer_schema` error message when future annotations cause `NameError` | ✅ Merged |
+| [#185751](https://github.com/pytorch/pytorch/pull/185751) | Raise `ValueError` early for invalid `(ndim, pad_size)` in non-constant `F.pad` modes | 🔄 Open |
+| [#185756](https://github.com/pytorch/pytorch/pull/185756) | Fix `float16` scalar overflow check inconsistency between CPU and GPU in `clamp` | 🔄 Open |
+
+### ⚡ vLLM
+| PR | Description | Status |
+|----|-------------|--------|
+| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate `Step3VL` under Transformers v5 | 🔄 Open |
+
+### 🚀 Apache Gluten
+| PR | Description | Status |
+|----|-------------|--------|
+| [#12158](https://github.com/apache/gluten/pull/12158) | Fix silently-skipped math/scalar test suites; add Velox native tests for `sin`, `tan`, `tanh`, `radians`, `ln` | 🔄 Open |
+| [#12151](https://github.com/apache/gluten/pull/12151) | Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
+
+### 🧠 Velox
+| PR | Description | Status |
+|----|-------------|--------|
+| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify `WriterOptions::encoding` is forwarded to Arrow writer | 🔄 Open |
+| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | 🔄 Open |
+| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand `convex_hull_agg` and `geometry_union_agg` docs | 🔄 Open |
+| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register `transform_values` in sparksql map functions registry | 🔄 Open |
+
+### 🔥 Apache Spark
+| PR | Description | Status |
+|----|-------------|--------|
+| [#56178](https://github.com/apache/spark/pull/56178) | [PYTHON] Support string representation of `durationMs` in `GroupState.setTimeoutDuration` | 🔄 Open |
+| [#56174](https://github.com/apache/spark/pull/56174) | [PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
+| [#56154](https://github.com/apache/spark/pull/56154) | [DOCS] Fix inaccurate documentation of `RuntimeConfig.get` | 🔄 Open |
+
 <!-- CONTRIBUTIONS_END -->
 
 ---
