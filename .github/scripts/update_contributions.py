@@ -40,23 +40,27 @@ def search_prs():
 def get_pr_status(repo, number, state):
     if state == "open":
         return "🔄 Open"
-    # closed — check if actually merged
+    
+    # closed — check if actually merged via merged_at
     out = subprocess.check_output([
         "gh", "api", f"repos/{repo}/pulls/{number}",
         "--jq", ".merged_at"
     ]).decode().strip()
+    
     if out and out != "null":
         return "✅ Merged"
-    # pytorchbot / custom merge bots squash without setting merged_at
-    for branch in ["main", "master"]:
-        result = subprocess.run(
-            ["gh", "api", f"repos/{repo}/commits?sha={branch}&per_page=100",
-             "--jq", f'[.[].commit.message] | any(contains("#{number}"))'],
-            capture_output=True, text=True
-        )
-        if result.stdout.strip() == "true":
-            return "✅ Merged"
+    
+    # fallback: check merge_commit_sha
+    out2 = subprocess.check_output([
+        "gh", "api", f"repos/{repo}/pulls/{number}",
+        "--jq", ".merge_commit_sha"
+    ]).decode().strip()
+    
+    if out2 and out2 != "null":
+        return "✅ Merged"
+    
     return "❌ Closed"
+
 
 # Discover all PRs automatically
 all_prs = search_prs()
