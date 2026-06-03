@@ -87,7 +87,7 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 ## 🏆 GitHub Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=brijrajk&theme=algolia&no-frame=true&no-bg=true&margin-w=6&column=7"/>
+  <img src="https://github-profile-trophy-liard-delta.vercel.app/?username=brijrajk&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=7"/>
 </p>
 
 ---
@@ -134,49 +134,35 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 ### 🤖 PyTorch
 | PR | Description | Status |
 |----|-------------|--------|
-| [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ✅ Merged |
-| [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
-| [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
+| [#185694](https://github.com/pytorch/pytorch/pull/185694) | Improve `infer_schema` error message when future annotations cause `NameError` | ✅ Merged |
+| [#185751](https://github.com/pytorch/pytorch/pull/185751) | Raise `ValueError` early for invalid `(ndim, pad_size)` in non-constant `F.pad` modes | 🔄 Open |
+| [#185756](https://github.com/pytorch/pytorch/pull/185756) | Fix `float16` scalar overflow check inconsistency between CPU and GPU in `clamp` | 🔄 Open |
 
 ### ⚡ vLLM
 | PR | Description | Status |
 |----|-------------|--------|
-| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate Step3VL under Transformers v5 | 🔄 Open |
+| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate `Step3VL` under Transformers v5 | 🔄 Open |
 
 ### 🚀 Apache Gluten
 | PR | Description | Status |
 |----|-------------|--------|
-| [#12199](https://github.com/apache/gluten/pull/12199) | [MINOR][VL] Re-enable stale ignored atan2 test in MathFunctionsValidateSuite | 🔄 Open |
-| [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | 🔄 Open |
-| [#12151](https://github.com/apache/gluten/pull/12151) | [GLUTEN-12013][VL] Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
+| [#12158](https://github.com/apache/gluten/pull/12158) | Fix silently-skipped math/scalar test suites; add Velox native tests for `sin`, `tan`, `tanh`, `radians`, `ln` | 🔄 Open |
+| [#12151](https://github.com/apache/gluten/pull/12151) | Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
 
 ### 🧠 Velox
 | PR | Description | Status |
 |----|-------------|--------|
-| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer | ✅ Merged |
-| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | ✅ Merged |
-| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs | ✅ Merged |
-| [#17668](https://github.com/facebookincubator/velox/pull/17668) | perf(tpcds): Eliminate redundant map allocations in toTableName and fromTableName | ✅ Merged |
-| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register transform_values in sparksql map functions registry | 🔄 Open |
+| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify `WriterOptions::encoding` is forwarded to Arrow writer | 🔄 Open |
+| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | 🔄 Open |
+| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand `convex_hull_agg` and `geometry_union_agg` docs | 🔄 Open |
+| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register `transform_values` in sparksql map functions registry | 🔄 Open |
 
 ### 🔥 Apache Spark
 | PR | Description | Status |
 |----|-------------|--------|
-| [#56250](https://github.com/apache/spark/pull/56250) | [SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except | 🔄 Open |
-| [#56248](https://github.com/apache/spark/pull/56248) | [SPARK-34679][DOCS] Add inferTimestamp option to JSON data source options table | 🔄 Open |
-| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
-| [#56174](https://github.com/apache/spark/pull/56174) | [SPARK-43847][PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
-| [#56154](https://github.com/apache/spark/pull/56154) | [SPARK-49798][DOCS] Fix inaccurate documentation of RuntimeConfig.get | 🔄 Open |
-
-### 📦 aws-samples/aws-etl-orchestrator
-| PR | Description | Status |
-|----|-------------|--------|
-| [#9](https://github.com/aws-samples/aws-etl-orchestrator/pull/9) | Migrate to Python3.12 | 🔄 Open |
-
-### 📦 google/it-cert-automation-practice
-| PR | Description | Status |
-|----|-------------|--------|
-| [#2336](https://github.com/google/it-cert-automation-practice/pull/2336) | Closes: #1 | 🔄 Open |
+| [#56178](https://github.com/apache/spark/pull/56178) | [PYTHON] Support string representation of `durationMs` in `GroupState.setTimeoutDuration` | 🔄 Open |
+| [#56174](https://github.com/apache/spark/pull/56174) | [PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
+| [#56154](https://github.com/apache/spark/pull/56154) | [DOCS] Fix inaccurate documentation of `RuntimeConfig.get` | 🔄 Open |
 
 <!-- CONTRIBUTIONS_END -->
 
