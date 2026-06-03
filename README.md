@@ -111,6 +111,13 @@ I work at the intersection of **high-performance computing**, **accelerated anal
 Active contributor to major Big Data and systems projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch ecosystem.
 
 <!-- CONTRIBUTIONS_START -->
+### 🤖 PyTorch (pytorch/pytorch)
+| PR | Description | Status |
+|----|-------------|--------|
+| [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
+| [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
+| [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ❌ Closed |
+
 ### 🚀 Apache Gluten (apache/gluten)
 | PR | Description | Status |
 |----|-------------|--------|
@@ -146,12 +153,6 @@ Active contributor to major Big Data and systems projects. PRs span bug fixes, f
 |----|-------------|--------|
 | [#2336](https://github.com/google/it-cert-automation-practice/pull/2336) | Closes: #1 | 🔄 Open |
 
-### 🤖 PyTorch (pytorch/pytorch)
-| PR | Description | Status |
-|----|-------------|--------|
-| [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
-| [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
-| [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ❌ Closed |
 
 ### 📦 vllm-project/vllm (vllm-project/vllm)
 | PR | Description | Status |
