@@ -163,7 +163,7 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 | [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | ✅ Merged |
 | [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs | ✅ Merged |
 | [#17668](https://github.com/facebookincubator/velox/pull/17668) | perf(tpcds): Eliminate redundant map allocations in toTableName and fromTableName | ✅ Merged |
-| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat(sparksql): Register transform_values in sparksql map functions registry | 🔄 Open |
+| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat: Register Spark transform_values function | 🔄 Open |
 
 ### 🔥 Apache Spark
 | PR | Description | Status |
