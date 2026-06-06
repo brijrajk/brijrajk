@@ -179,6 +179,11 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 |----|-------------|--------|
 | [#9](https://github.com/aws-samples/aws-etl-orchestrator/pull/9) | Migrate to Python3.12 | 🔄 Open |
 
+### 📦 duckdb/duckdb
+| PR | Description | Status |
+|----|-------------|--------|
+| [#23104](https://github.com/duckdb/duckdb/pull/23104) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | ✅ Merged |
+
 ### 📦 google/it-cert-automation-practice
 | PR | Description | Status |
 |----|-------------|--------|
