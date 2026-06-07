@@ -42,6 +42,10 @@ query getUserStats($username: String!) {
   userContestRankingHistory(username: $username) {
     attended rating contest { title startTime }
   }
+  allQuestionsCount {
+    difficulty
+    count
+  }
 }
 """
 
@@ -133,12 +137,11 @@ def generate_svg(data):
     easy   = st.get("Easy",   {}).get("count", 0)
     med    = st.get("Medium", {}).get("count", 0)
     hard   = st.get("Hard",   {}).get("count", 0)
-    # "submissions" = total problems available on LeetCode per difficulty
-    # These are the denominators shown in LeetCode UI (e.g. 133/949)
-    easy_t = st.get("Easy",   {}).get("submissions", 949)
-    med_t  = st.get("Medium", {}).get("submissions", 2066)
-    hard_t = st.get("Hard",   {}).get("submissions", 942)
-    # Clamp to known minimums in case API returns lower counts
+    # Get real total problem counts from allQuestionsCount
+    all_q  = {q["difficulty"]: q["count"] for q in (data["data"].get("allQuestionsCount") or [])}
+    easy_t = all_q.get("Easy",   950)
+    med_t  = all_q.get("Medium", 2100)
+    hard_t = all_q.get("Hard",   950)
     easy_t = max(easy_t, easy)
     med_t  = max(med_t,  med)
     hard_t = max(hard_t, hard)
@@ -225,7 +228,7 @@ def generate_svg(data):
         )
 
     hm  = heatmap(cal_str, 236, 330, weeks=52)
-    sp  = sparkline(hi,     560, 52,  318, 75)
+    sp  = sparkline(hi,     590, 52,  280, 70)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
 <title>LeetCode Profile — {name}</title>
