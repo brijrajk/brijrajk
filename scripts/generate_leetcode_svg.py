@@ -100,13 +100,27 @@ def sparkline(history, x0, y0, w, h):
     lx,ly = coords[-1]
     yr_s  = datetime.fromtimestamp(pts[0]["contest"]["startTime"],  tz=timezone.utc).strftime("%Y")
     yr_e  = datetime.fromtimestamp(pts[-1]["contest"]["startTime"], tz=timezone.utc).strftime("%Y")
+    # Highest rating point
+    hi_i  = ratings.index(mx)
+    hx,hy = coords[hi_i]
+    # Min/max rating labels on y-axis
+    y_top_label = f"{int(mx)}"
+    y_bot_label = f"{int(mn)}"
     return (
-        f'<polygon points="{area}" fill="#FFA116" fill-opacity="0.1"/>'
+        f'<polygon points="{area}" fill="#FFA116" fill-opacity="0.08"/>'
         f'<polyline points="{poly}" fill="none" stroke="#FFA116" stroke-width="1.5" stroke-linejoin="round"/>'
-        f'<circle cx="{lx:.1f}" cy="{ly:.1f}" r="3.5" fill="#FFA116"/>'
+        f'<!-- Current rating dot -->'
+        f'<circle cx="{lx:.1f}" cy="{ly:.1f}" r="4" fill="#FFA116"/>'
         f'<text x="{lx+6:.1f}" y="{ly+4:.1f}" fill="#FFA116" font-size="10" font-family="sans-serif" font-weight="600">{int(ratings[-1])}</text>'
-        f'<text x="{x0}" y="{y0+h+14}" fill="#4d5e6e" font-size="10" font-family="sans-serif">{yr_s}</text>'
-        f'<text x="{x0+w}" y="{y0+h+14}" text-anchor="end" fill="#4d5e6e" font-size="10" font-family="sans-serif">{yr_e}</text>'
+        f'<!-- Highest rating dot + label -->'
+        f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="3" fill="white" fill-opacity="0.9"/>'
+        f'<text x="{hx:.1f}" y="{hy-6:.1f}" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="sans-serif">{int(mx)}</text>'
+        f'<!-- Y-axis scale -->'
+        f'<text x="{x0-4}" y="{y0+4}" text-anchor="end" fill="#4d5e6e" font-size="9" font-family="sans-serif">{y_top_label}</text>'
+        f'<text x="{x0-4}" y="{y0+h}" text-anchor="end" fill="#4d5e6e" font-size="9" font-family="sans-serif">{y_bot_label}</text>'
+        f'<!-- X-axis year labels -->'
+        f'<text x="{x0}" y="{y0+h+13}" fill="#4d5e6e" font-size="10" font-family="sans-serif">{yr_s}</text>'
+        f'<text x="{x0+w}" y="{y0+h+13}" text-anchor="end" fill="#4d5e6e" font-size="10" font-family="sans-serif">{yr_e}</text>'
     )
 
 def generate_svg(data):
@@ -211,7 +225,7 @@ def generate_svg(data):
         )
 
     hm  = heatmap(cal_str, 236, 330, weeks=52)
-    sp  = sparkline(hi,     560, 55,  320, 70)
+    sp  = sparkline(hi,     560, 52,  318, 75)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
 <title>LeetCode Profile — {name}</title>
