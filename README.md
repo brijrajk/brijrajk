@@ -110,9 +110,42 @@
 
 ## 🧩 LeetCode Stats
 
+<!-- LEETCODE_STATS_START -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Total%20Solved-414-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Global%20Rank-%23279424-1a2332?style=for-the-badge"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Easy-133-00b8a3?style=for-the-badge"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Medium-217-ffc01e?style=for-the-badge"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Hard-64-ef4743?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Contest%20Rating-dynamic-58a6ff?style=for-the-badge"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Contest%20Rank-dynamic-1a2332?style=for-the-badge"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Top-dynamic-6e40c9?style=for-the-badge"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Contests-dynamic-0d1117?style=for-the-badge"/>
+</p>
+
 <p align="center">
   <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="500"/>
 </p>
+
+<p align="center">
+  <a href="https://leetcode.com/u/brij_raj/">
+    <img src="https://img.shields.io/badge/View%20Profile%20on%20LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+  </a>
+</p>
+
+<p align="center"><sub>🔄 Auto-updated daily via GitHub Actions</sub></p>
+
+<!-- LEETCODE_STATS_END -->
 
 ---
 
