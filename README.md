@@ -134,7 +134,8 @@
 </p>
 
 <p align="center">
-  <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="500"/>
+  <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="49%"/>
+  <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=contest&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="49%"/>
 </p>
 
 <p align="center">
@@ -278,7 +279,7 @@ My pinned repos include forks of the projects I actively work in:
     <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   &nbsp;
-  <a href="mailto:brijrajk@github.com">
+  <a href="mailto:brijraj31@gmail.com">
     <img src="https://img.shields.io/badge/Drop%20a%20Mail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
