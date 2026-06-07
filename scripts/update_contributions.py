@@ -68,15 +68,26 @@ def status(owner, repo, num):
     # Try pulls endpoint first (has merged_at directly)
     d = gh(f"/repos/{owner}/{repo}/pulls/{num}")
     if d:
-        if d.get("merged_at"):     return "✅ Merged"
-        if d.get("state") == "closed": return "❌ Closed"
+        if d.get("merged_at"):
+            return "✅ Merged"
+        if d.get("state") == "closed":
+            # Meta/Velox bot adds "Merged" label on bot-sync merges
+            labels = [l["name"].lower() for l in d.get("labels", [])]
+            if "merged" in labels:
+                return "✅ Merged"
+            return "❌ Closed"
         return "🔄 Open"
-    # Fallback: issues endpoint (catches closed PRs that 404 on pulls)
+    # Fallback: issues endpoint
     d = gh(f"/repos/{owner}/{repo}/issues/{num}")
     if d:
-        pr = d.get("pull_request", {})
-        if pr.get("merged_at"):        return "✅ Merged"
-        if d.get("state") == "closed": return "❌ Closed"
+        pr     = d.get("pull_request", {})
+        labels = [l["name"].lower() for l in d.get("labels", [])]
+        if pr.get("merged_at"):
+            return "✅ Merged"
+        if "merged" in labels:
+            return "✅ Merged"
+        if d.get("state") == "closed":
+            return "❌ Closed"
         return "🔄 Open"
     return "❓ Unknown"
 
