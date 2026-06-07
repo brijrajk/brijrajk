@@ -64,20 +64,43 @@ def gh(path):
     except URLError as e:
         print(f"  warn: {e}"); return None
 
+MERGE_COMMENT_PATTERNS = [
+    r"merging to",
+    r"merged to",
+    r"merged into",
+    r"cherry.pick",
+    r"landed in",
+    r"committed to",
+    r"closing in favor of",
+]
+
+def is_merged_via_comment(owner, repo, num):
+    """Check PR comments for merge confirmation language."""
+    comments = gh(f"/repos/{owner}/{repo}/issues/{num}/comments")
+    if not comments:
+        return False
+    import re
+    for comment in comments:
+        body = comment.get("body", "").lower()
+        for pattern in MERGE_COMMENT_PATTERNS:
+            if re.search(pattern, body):
+                return True
+    return False
+
 def status(owner, repo, num):
-    # Try pulls endpoint first (has merged_at directly)
     d = gh(f"/repos/{owner}/{repo}/pulls/{num}")
     if d:
         if d.get("merged_at"):
             return "✅ Merged"
         if d.get("state") == "closed":
-            # Meta/Velox bot adds "Merged" label on bot-sync merges
             labels = [l["name"].lower() for l in d.get("labels", [])]
             if "merged" in labels:
                 return "✅ Merged"
+            # Check comments for merge confirmation
+            if is_merged_via_comment(owner, repo, num):
+                return "✅ Merged"
             return "❌ Closed"
         return "🔄 Open"
-    # Fallback: issues endpoint
     d = gh(f"/repos/{owner}/{repo}/issues/{num}")
     if d:
         pr     = d.get("pull_request", {})
@@ -86,11 +109,13 @@ def status(owner, repo, num):
             return "✅ Merged"
         if "merged" in labels:
             return "✅ Merged"
+        if is_merged_via_comment(owner, repo, num):
+            return "✅ Merged"
         if d.get("state") == "closed":
             return "❌ Closed"
         return "🔄 Open"
     return "❓ Unknown"
-
+  
 def build():
     statuses = {}
     for owner, repo, num, _ in TRACKED:
