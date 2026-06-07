@@ -64,19 +64,55 @@ def gh(path):
     except URLError as e:
         print(f"  warn: {e}"); return None
 
+# Phrases in PR comments that indicate a maintainer merged the code
+MERGE_PHRASES = [
+    "merging to", "merged to", "merged into", "merged in",
+    "cherry-pick", "cherry pick", "landed in", "committed to",
+    "closing in favor", "squashed and merged",
+]
+
+def is_merged_by_comment(owner, repo, num):
+    """Check PR comments for merge-confirmation language (e.g. Spark maintainers)."""
+    import re
+    comments = gh(f"/repos/{owner}/{repo}/issues/{num}/comments")
+    if not comments:
+        return False
+    for c in comments:
+        body = c.get("body", "").lower()
+        if any(re.search(p, body) for p in MERGE_PHRASES):
+            return True
+    return False
+
 def status(owner, repo, num):
-    # Try pulls endpoint first (has merged_at directly)
+    # 1. Pull endpoint — native GitHub merge sets merged_at
     d = gh(f"/repos/{owner}/{repo}/pulls/{num}")
     if d:
-        if d.get("merged_at"):     return "✅ Merged"
-        if d.get("state") == "closed": return "❌ Closed"
+        if d.get("merged_at"):
+            return "✅ Merged"
+        if d.get("state") == "closed":
+            # 2. Label check — Meta/Velox bot adds "Merged" label on bot-sync
+            labels = [l["name"].lower() for l in d.get("labels", [])]
+            if "merged" in labels:
+                return "✅ Merged"
+            # 3. Comment check — Spark/Apache maintainers say "merging to master"
+            if is_merged_by_comment(owner, repo, num):
+                return "✅ Merged"
+            return "❌ Closed"
         return "🔄 Open"
-    # Fallback: issues endpoint (catches closed PRs that 404 on pulls)
+
+    # Fallback: issues endpoint (closed PRs 404 on pulls endpoint)
     d = gh(f"/repos/{owner}/{repo}/issues/{num}")
     if d:
-        pr = d.get("pull_request", {})
-        if pr.get("merged_at"):        return "✅ Merged"
-        if d.get("state") == "closed": return "❌ Closed"
+        pr     = d.get("pull_request", {})
+        labels = [l["name"].lower() for l in d.get("labels", [])]
+        if pr.get("merged_at"):
+            return "✅ Merged"
+        if "merged" in labels:
+            return "✅ Merged"
+        if d.get("state") == "closed":
+            if is_merged_by_comment(owner, repo, num):
+                return "✅ Merged"
+            return "❌ Closed"
         return "🔄 Open"
     return "❓ Unknown"
 
