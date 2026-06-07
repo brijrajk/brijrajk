@@ -1,136 +1,114 @@
-import json, subprocess, re
-from collections import defaultdict
+#!/usr/bin/env python3
+"""
+Fetches live PR statuses from GitHub API and rewrites the
+<!-- CONTRIBUTIONS_START --> ... <!-- CONTRIBUTIONS_END --> block in README.md.
 
-AUTHOR = "brijrajk"
+Status logic:
+  merged_at is set        → ✅ Merged
+  state==closed, no merge → ❌ Closed
+  state==open             → 🔄 Open
 
-# Repos to skip (forks, personal experiments, etc.)
-SKIP_REPOS = {
-    "brijrajk/pytorch",
-    "brijrajk/spark",
-    "brijrajk/facebook-velox",
-    "brijrajk/incubator-gluten",
-    "brijrajk/vllm",
-}
+Run: python scripts/update_contributions.py
+Requires: GITHUB_TOKEN env var (automatically set in GitHub Actions)
+"""
 
-# Display config — emoji + friendly name
-REPO_DISPLAY = {
-    "pytorch/pytorch":          ("🤖", "PyTorch"),
-    "vllm-project/vllm":        ("⚡", "vLLM"),
-    "apache/gluten":            ("🚀", "Apache Gluten"),
-    "facebookincubator/velox":  ("🧠", "Velox"),
-    "apache/spark":             ("🔥", "Apache Spark"),
-}
+import json, os, re, sys
+from urllib.request import urlopen, Request
+from urllib.error import URLError
 
-# Fixed display order — PyTorch always first, vLLM second
-# New repos not listed here get auto-appended at the bottom
-REPO_ORDER = [
-    "pytorch/pytorch",
-    "vllm-project/vllm",
-    "apache/gluten",
-    "facebookincubator/velox",
-    "apache/spark",
+README = "README.md"
+TOKEN  = os.environ.get("GITHUB_TOKEN", "")
+
+# (owner, repo, pr_number, description)
+TRACKED = [
+    ("pytorch",        "pytorch",                    185694, "[library] Improve infer_schema error message when future annotations cause NameError"),
+    ("pytorch",        "pytorch",                    185756, "[clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU"),
+    ("pytorch",        "pytorch",                    185751, "[nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes"),
+    ("vllm-project",   "vllm",                       44349,  "[Tests] Gate Step3VL under Transformers v5"),
+    ("apache",         "gluten",                     12199,  "[MINOR][VL] Re-enable stale ignored atan2 test in MathFunctionsValidateSuite"),
+    ("apache",         "gluten",                     12158,  "[GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln"),
+    ("apache",         "gluten",                     12151,  "[GLUTEN-12013][VL] Fix bloom-filter bytes corruption on whole-stage AQE fallback"),
+    ("facebookincubator","velox",                    17677,  "test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer"),
+    ("facebookincubator","velox",                    17676,  "docs: Fix duplicate object description warnings in Sphinx doc build"),
+    ("facebookincubator","velox",                    17675,  "docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs"),
+    ("facebookincubator","velox",                    17669,  "feat: Register Spark transform_values function"),
+    ("facebookincubator","velox",                    17668,  "perf(tpcds): Eliminate redundant map allocations in toTableName and fromTableName"),
+    ("apache",         "spark",                      56154,  "[SPARK-49798][DOCS] Fix inaccurate documentation of RuntimeConfig.get"),
+    ("apache",         "spark",                      56250,  "[SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except"),
+    ("apache",         "spark",                      56248,  "[SPARK-34679][DOCS] Add inferTimestamp option to JSON data source options table"),
+    ("apache",         "spark",                      56178,  "[SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration"),
+    ("apache",         "spark",                      56174,  "[SPARK-43847][PYTHON] Throw structured error when reading Protobuf descriptor file fails"),
+    ("aws-samples",    "aws-etl-orchestrator",        9,     "Migrate to Python3.12"),
+    ("duckdb",         "duckdb",                     23104,  "Fix *COLUMNS() false rejection when operators appear in lambda bodies"),
+    ("google",         "it-cert-automation-practice", 2336,  "Closes: #1"),
 ]
 
-def search_prs():
-    """Fetch all PRs opened by AUTHOR across all of GitHub."""
-    prs = []
-    page = 1
-    while True:
-        out = subprocess.check_output([
-            "gh", "api",
-            f"search/issues?q=author:{AUTHOR}+type:pr&per_page=100&page={page}",
-            "--jq", ".items[] | {repo: (.repository_url | split(\"/\") | .[-2:] | join(\"/\")), number: .number, title: .title, state: .state}"
-        ])
-        items = [json.loads(line) for line in out.decode().strip().splitlines() if line]
-        if not items:
-            break
-        prs.extend(items)
-        page += 1
-        if len(items) < 100:
-            break
-    return [p for p in prs if p["repo"] not in SKIP_REPOS]
+GROUPS = [
+    ("pytorch",          "pytorch",                    "🤖 PyTorch"),
+    ("vllm-project",     "vllm",                       "⚡ vLLM"),
+    ("apache",           "gluten",                     "🚀 Apache Gluten"),
+    ("facebookincubator","velox",                      "🧠 Velox"),
+    ("apache",           "spark",                      "🔥 Apache Spark"),
+    ("aws-samples",      "aws-etl-orchestrator",       "📦 aws-samples/aws-etl-orchestrator"),
+    ("duckdb",           "duckdb",                     "📦 duckdb/duckdb"),
+    ("google",           "it-cert-automation-practice","📦 google/it-cert-automation-practice"),
+]
 
-def get_pr_status(repo, number, state):
-    if state == "open":
+def gh(path):
+    url = f"https://api.github.com{path}"
+    hdrs = {"Accept": "application/vnd.github+json", "User-Agent": "brijrajk-readme"}
+    if TOKEN: hdrs["Authorization"] = f"Bearer {TOKEN}"
+    try:
+        with urlopen(Request(url, headers=hdrs), timeout=15) as r:
+            return json.loads(r.read())
+    except URLError as e:
+        print(f"  warn: {e}"); return None
+
+def status(owner, repo, num):
+    # Try pulls endpoint first (has merged_at directly)
+    d = gh(f"/repos/{owner}/{repo}/pulls/{num}")
+    if d:
+        if d.get("merged_at"):     return "✅ Merged"
+        if d.get("state") == "closed": return "❌ Closed"
         return "🔄 Open"
+    # Fallback: issues endpoint (catches closed PRs that 404 on pulls)
+    d = gh(f"/repos/{owner}/{repo}/issues/{num}")
+    if d:
+        pr = d.get("pull_request", {})
+        if pr.get("merged_at"):        return "✅ Merged"
+        if d.get("state") == "closed": return "❌ Closed"
+        return "🔄 Open"
+    return "❓ Unknown"
 
-    # closed — check if actually merged via merged_at
-    out = subprocess.check_output([
-        "gh", "api", f"repos/{repo}/pulls/{number}",
-        "--jq", ".merged_at"
-    ]).decode().strip()
+def build():
+    statuses = {}
+    for owner, repo, num, _ in TRACKED:
+        print(f"  {owner}/{repo}#{num} ...", end=" ", flush=True)
+        s = status(owner, repo, num)
+        statuses[(owner, repo, num)] = s
+        print(s)
 
-    if out and out != "null":
-        return "✅ Merged"
+    lines = ["<!-- CONTRIBUTIONS_START -->"]
+    for owner, repo, heading in GROUPS:
+        prs = [(n, d) for (o, r, n, d) in TRACKED if o==owner and r==repo]
+        if not prs: continue
+        lines += [f"### {heading}", "| PR | Description | Status |", "|----|-------------|--------|"]
+        for num, desc in prs:
+            s   = statuses.get((owner, repo, num), "❓ Unknown")
+            url = f"https://github.com/{owner}/{repo}/pull/{num}"
+            lines.append(f"| [#{num}]({url}) | {desc} | {s} |")
+        lines.append("")
+    lines.append("<!-- CONTRIBUTIONS_END -->")
+    return "\n".join(lines)
 
-    # fallback: check merge_commit_sha
-    out2 = subprocess.check_output([
-        "gh", "api", f"repos/{repo}/pulls/{number}",
-        "--jq", ".merge_commit_sha"
-    ]).decode().strip()
+def update(section):
+    with open(README) as f: c = f.read()
+    new = re.sub(r'<!-- CONTRIBUTIONS_START -->.*?<!-- CONTRIBUTIONS_END -->', section, c, flags=re.DOTALL)
+    if new == c: print("WARNING: markers not found"); return
+    with open(README, "w") as f: f.write(new)
+    print("README updated")
 
-    if out2 and out2 != "null":
-        return "✅ Merged"
-
-    return "❌ Closed"
-
-def build_repo_table(repo, prs):
-    """Build markdown table lines for a single repo."""
-    emoji, name = REPO_DISPLAY.get(repo, ("📦", repo))
-    lines = []
-    lines.append(f"### {emoji} {name}")
-    lines.append("| PR | Description | Status |")
-    lines.append("|----|-------------|--------|")
-    for number, url, title, status in prs:
-        lines.append(f"| [#{number}]({url}) | {title} | {status} |")
-    lines.append("")
-    return lines
-
-# Discover all PRs automatically
-all_prs = search_prs()
-
-# Group by repo
-by_repo = defaultdict(list)
-for pr in all_prs:
-    repo = pr["repo"]
-    status = get_pr_status(repo, pr["number"], pr["state"])
-    url = f"https://github.com/{repo}/pull/{pr['number']}"
-    by_repo[repo].append((pr["number"], url, pr["title"], status))
-
-# Sort each repo's PRs newest first
-# Sort each repo's PRs — Merged first, then Open, then Closed, newest first within each
-STATUS_PRIORITY = {
-    "✅ Merged": 0,
-    "🔄 Open":   1,
-    "❌ Closed": 2,
-}
-
-for repo in by_repo:
-    by_repo[repo].sort(key=lambda x: (STATUS_PRIORITY.get(x[3], 9), -x[0]))
-
-# Build tables — fixed order first, then auto-detected new repos
-lines = []
-
-# 1. Render in fixed order
-for repo in REPO_ORDER:
-    if repo not in by_repo:
-        continue
-    lines.extend(build_repo_table(repo, by_repo[repo]))
-
-# 2. Auto-append any new repos not in REPO_ORDER
-for repo in sorted(by_repo.keys()):
-    if repo in REPO_ORDER:
-        continue
-    lines.extend(build_repo_table(repo, by_repo[repo]))
-
-# Inject into README between markers
-new_section = "<!-- CONTRIBUTIONS_START -->\n" + "\n".join(lines) + "\n<!-- CONTRIBUTIONS_END -->"
-readme = open("README.md").read()
-updated = re.sub(
-    r"<!-- CONTRIBUTIONS_START -->.*?<!-- CONTRIBUTIONS_END -->",
-    new_section,
-    readme,
-    flags=re.DOTALL
-)
-open("README.md", "w").write(updated)
-print(f"Updated README with {len(all_prs)} PRs across {len(by_repo)} repos.")
+if __name__ == "__main__":
+    print("Fetching PR statuses...")
+    update(build())
+    print("Done")
