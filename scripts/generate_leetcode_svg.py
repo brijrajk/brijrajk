@@ -119,9 +119,15 @@ def generate_svg(data):
     easy   = st.get("Easy",   {}).get("count", 0)
     med    = st.get("Medium", {}).get("count", 0)
     hard   = st.get("Hard",   {}).get("count", 0)
+    # "submissions" = total problems available on LeetCode per difficulty
+    # These are the denominators shown in LeetCode UI (e.g. 133/949)
     easy_t = st.get("Easy",   {}).get("submissions", 949)
     med_t  = st.get("Medium", {}).get("submissions", 2066)
     hard_t = st.get("Hard",   {}).get("submissions", 942)
+    # Clamp to known minimums in case API returns lower counts
+    easy_t = max(easy_t, easy)
+    med_t  = max(med_t,  med)
+    hard_t = max(hard_t, hard)
     sum_t  = easy_t + med_t + hard_t
 
     cal      = u.get("userCalendar") or {}
@@ -160,24 +166,36 @@ def generate_svg(data):
             f'<rect x="16" y="{ly+4}" width="{bw}" height="5" rx="2.5" fill="#FFA116"/>'
         )
 
+    # Badge name word-wrap helper
+    def badge_label(name, max_w=10):
+        words = name.split(); l1 = ""; l2 = ""
+        for w in words:
+            if len(l1) + len(w) + (1 if l1 else 0) <= max_w: l1 = (l1+" "+w).strip()
+            else: l2 = (l2+" "+w).strip()
+        return l1, l2
+
     # Sidebar badge boxes
     sb_badges = ""
     for i, b in enumerate(badges):
         bx = 16 + i*96
+        l1, l2 = badge_label(b["displayName"], 11)
         sb_badges += (
-            f'<rect x="{bx}" y="296" width="84" height="58" rx="6" fill="#0f2d1a" stroke="#1a4a2a" stroke-width="1"/>'
-            f'<text x="{bx+42}" y="323" text-anchor="middle" font-size="20">🏅</text>'
-            f'<text x="{bx+42}" y="344" text-anchor="middle" fill="#6b7280" font-size="8" font-family="sans-serif">{b["displayName"][:11]}</text>'
+            f'<rect x="{bx}" y="296" width="84" height="64" rx="6" fill="#0f2d1a" stroke="#1a4a2a" stroke-width="1"/>'
+            f'<text x="{bx+42}" y="318" text-anchor="middle" font-size="18">🏅</text>'
+            f'<text x="{bx+42}" y="332" text-anchor="middle" fill="#6b7280" font-size="7.5" font-family="sans-serif">{l1}</text>'
+            f'<text x="{bx+42}" y="342" text-anchor="middle" fill="#6b7280" font-size="7.5" font-family="sans-serif">{l2}</text>'
         )
 
     # Main panel badge boxes (right of diff rows, x=680)
     main_badges = ""
     for i, b in enumerate(badges):
-        bx = 680 + i*72
+        bx = 680 + i*76
+        l1, l2 = badge_label(b["displayName"], 9)
         main_badges += (
-            f'<rect x="{bx}" y="165" width="64" height="64" rx="8" fill="#0f2940" stroke="#1a3a5a" stroke-width="1"/>'
-            f'<text x="{bx+32}" y="204" text-anchor="middle" font-size="26">🏅</text>'
-            f'<text x="{bx+32}" y="222" text-anchor="middle" fill="#4d5e6e" font-size="8" font-family="sans-serif">{b["displayName"][:9]}</text>'
+            f'<rect x="{bx}" y="162" width="70" height="74" rx="8" fill="#0f2940" stroke="#1a3a5a" stroke-width="1"/>'
+            f'<text x="{bx+35}" y="193" text-anchor="middle" font-size="22">🏅</text>'
+            f'<text x="{bx+35}" y="208" text-anchor="middle" fill="#4d5e6e" font-size="7.5" font-family="sans-serif">{l1}</text>'
+            f'<text x="{bx+35}" y="218" text-anchor="middle" fill="#4d5e6e" font-size="7.5" font-family="sans-serif">{l2}</text>'
         )
 
     # Difficulty rows — x=430, bars 200px wide
@@ -193,7 +211,7 @@ def generate_svg(data):
         )
 
     hm  = heatmap(cal_str, 236, 330, weeks=52)
-    sp  = sparkline(hi,     500, 14,  370, 100)
+    sp  = sparkline(hi,     560, 55,  320, 70)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
 <title>LeetCode Profile — {name}</title>
@@ -253,14 +271,14 @@ def generate_svg(data):
 <text x="350" y="48" fill="#e2e8f0" font-size="15" font-family="sans-serif">{c_rank:,}/{c_tot:,}</text>
 
 <!-- Attended -->
-<text x="500" y="18" fill="#8b9cb0" font-size="11" font-family="sans-serif">Attended</text>
-<text x="500" y="48" fill="#e2e8f0" font-size="15" font-family="sans-serif">{c_att}</text>
+<text x="490" y="18" fill="#8b9cb0" font-size="11" font-family="sans-serif">Attended</text>
+<text x="490" y="48" fill="#e2e8f0" font-size="15" font-family="sans-serif">{c_att}</text>
 
 <!-- Top -->
 <text x="884" y="18" text-anchor="end" fill="#8b9cb0" font-size="11" font-family="sans-serif">Top</text>
 <text x="884" y="52" text-anchor="end" fill="#e2e8f0" font-size="26" font-weight="700" font-family="sans-serif">{c_pct}%</text>
 
-<!-- Sparkline: x=500..880, y=14..114 -->
+<!-- Sparkline: x=560..880, y=55..125 (below contest numbers) -->
 {sp}
 
 <!-- Divider row1/row2 -->
