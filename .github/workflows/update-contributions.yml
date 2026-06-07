@@ -1,35 +1,36 @@
-name: Update Contributions
+name: 📋 Update OSS Contributions Table
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: "0 1 * * *"      # daily at 1am UTC (after LeetCode action)
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["scripts/update_contributions.py"]
 
 jobs:
-  update:
+  update-contributions:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup GitHub CLI
-        run: gh --version || sudo apt-get install gh -y
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
       - name: Update contributions table
+        run: python scripts/update_contributions.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 .github/scripts/update_contributions.py
 
-      - name: Commit if changed
+      - name: Commit & push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet && echo "No changes" || (
-            git add README.md &&
-            git commit -m "chore: update contributions status" &&
-            git push
-          )
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "chore: 📋 auto-update contributions table [skip ci]"
+          git push
