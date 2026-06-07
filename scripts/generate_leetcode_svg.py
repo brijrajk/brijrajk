@@ -31,7 +31,8 @@ query getUserStats($username: String!) {
     submitStats: submitStatsGlobal {
       acSubmissionNum { difficulty count submissions }
     }
-    userCalendar(year: 2025) { submissionCalendar totalActiveDays streak }
+    cal2025: userCalendar(year: 2025) { submissionCalendar totalActiveDays streak }
+    cal2026: userCalendar(year: 2026) { submissionCalendar totalActiveDays streak }
     badges { id displayName }
     languageProblemCount { languageName problemsSolved }
   }
@@ -147,10 +148,15 @@ def generate_svg(data):
     hard_t = max(hard_t, hard)
     sum_t  = easy_t + med_t + hard_t
 
-    cal      = u.get("userCalendar") or {}
-    cal_str  = cal.get("submissionCalendar", "{}")
-    act_days = cal.get("totalActiveDays", 0)
-    streak   = cal.get("streak", 0)
+    cal25    = u.get("cal2025") or {}
+    cal26    = u.get("cal2026") or {}
+    # Merge both year calendars
+    merged   = {}
+    merged.update(json.loads(cal25.get("submissionCalendar", "{}")))
+    merged.update(json.loads(cal26.get("submissionCalendar", "{}")))
+    cal_str  = json.dumps(merged)
+    act_days = cal26.get("totalActiveDays") or cal25.get("totalActiveDays", 0)
+    streak   = cal26.get("streak") or cal25.get("streak", 0)
     ranking  = u["profile"]["ranking"]
     rep      = u["profile"].get("reputation", 0)
     name     = u["profile"].get("realName") or USERNAME
