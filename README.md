@@ -112,40 +112,8 @@
 
 <!-- LEETCODE_STATS_START -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Total%20Solved-414-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Global%20Rank-%23279424-1a2332?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Easy-133-00b8a3?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Medium-217-ffc01e?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Hard-64-ef4743?style=for-the-badge"/>
+  <img src="assets/leetcode-profile.svg" alt="LeetCode Profile" width="100%"/>
 </p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Contest%20Rating-dynamic-58a6ff?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Contest%20Rank-dynamic-1a2332?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Top-dynamic-6e40c9?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Contests-dynamic-0d1117?style=for-the-badge"/>
-</p>
-
-<p align="center">
-  <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="49%"/>
-  <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=contest&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="49%"/>
-</p>
-
-<p align="center">
-  <a href="https://leetcode.com/u/brij_raj/">
-    <img src="https://img.shields.io/badge/View%20Profile%20on%20LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
-  </a>
-</p>
-
-<p align="center"><sub>🔄 Auto-updated daily via GitHub Actions</sub></p>
-
 <!-- LEETCODE_STATS_END -->
 
 ---
@@ -181,6 +149,8 @@
 ## 🌍 Open Source Contributions
 
 Active contributor to major Big Data and AI projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch/vLLM ecosystem.
+
+> ✅ Merged · 🔄 Open · ❌ Closed without merge
 
 <!-- CONTRIBUTIONS_START -->
 ### 🤖 PyTorch
@@ -228,7 +198,7 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 ### 📦 duckdb/duckdb
 | PR | Description | Status |
 |----|-------------|--------|
-| [#23104](https://github.com/duckdb/duckdb/pull/23104) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | ✅ Merged |
+| [#23104](https://github.com/duckdb/duckdb/pull/23104) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | ❌ Closed |
 
 ### 📦 google/it-cert-automation-practice
 | PR | Description | Status |
@@ -279,7 +249,7 @@ My pinned repos include forks of the projects I actively work in:
     <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   &nbsp;
-  <a href="mailto:brijraj31@gmail.com">
+  <a href="mailto:brijrajk@github.com">
     <img src="https://img.shields.io/badge/Drop%20a%20Mail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
