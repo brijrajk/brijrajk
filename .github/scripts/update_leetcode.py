@@ -124,6 +124,8 @@ def build_leetcode_section(data: dict) -> str:
         message_enc = str(message).replace(" ", "%20").replace("#", "%23")
         return f"https://img.shields.io/badge/{label_enc}-{message_enc}-{color}?style=for-the-badge{logo_part}"
 
+    card_base = f"https://leetcard.jacoblin.cool/{username}?theme=dark&font=Fira%20Code&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff"
+
     lines = [
         "## 🧩 LeetCode Stats",
         "",
@@ -160,7 +162,8 @@ def build_leetcode_section(data: dict) -> str:
         "</p>",
         "",
         '<p align="center">',
-        f'  <img src="https://leetcard.jacoblin.cool/{username}?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="500"/>',
+        f'  <img src="{card_base}&ext=heatmap" width="49%"/>',
+        f'  <img src="{card_base}&ext=contest" width="49%"/>',
         "</p>",
         "",
         '<p align="center">',
