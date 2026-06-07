@@ -1,195 +1,154 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,30:1a2332,70:0a3d62,100:0d1117&height=200&section=header&text=BRIJ%20RAJ%20KISHORE&fontSize=52&fontColor=58a6ff&fontAlignY=55&animation=fadeIn&desc=Pushing%20Query%20Engines%20Into%20Silicon%20⚡&descAlignY=75&descSize=16&descColor=8b949e"/>
-</div>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=130&section=header&text=BRIJ%20RAJ%20KISHORE&fontSize=40&fontColor=58a6ff&fontAlignY=60&animation=fadeIn&desc=Senior%20MTS%20%7C%20Big%20Data%20%7C%20LLM%20Acceleration%20%7C%20Systems%20Engineer&descAlignY=80&descSize=14&descColor=8b949e"/>
+</p>
 
-<div align="center">
+<p align="center">
   <a href="https://www.linkedin.com/in/brijrajkishore/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+    <img height="28" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   &nbsp;
   <a href="https://github.com/brijrajk" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+    <img height="28" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/brij_raj/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+    <img height="28" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
   </a>
   &nbsp;
-  <img src="https://img.shields.io/badge/NIT%20Nagpur-M.Tech%20CS-0a3d62?style=for-the-badge&logo=academia&logoColor=58a6ff"/>
+  <img height="28" src="https://img.shields.io/badge/India-🇮🇳-1a2332?style=for-the-badge"/>
   &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=brijrajk&color=58a6ff&style=for-the-badge&label=PROFILE+VIEWS"/>
-</div>
+  <img height="28" src="https://img.shields.io/badge/NIT%20Nagpur-M.Tech%20CS-1a2332?style=for-the-badge&logo=academia&logoColor=58a6ff"/>
+</p>
 
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Senior+MTS+%40+Zettabolt+Technologies;Apache+Spark+%7C+Velox+%7C+Gluten+%7C+PyTorch+OOT;LLM+Acceleration+%7C+vLLM+%7C+FPGA+%7C+C%2B%2B;Open+Source+Contributor+%F0%9F%8C%8D;From+query+engines+to+transformer+kernels+%E2%9A%A1" alt="Typing SVG" />
+  </a>
+</p>
+
+---
+
+<table>
+<tr>
+<td valign="top" width="55%">
+
+### 👋 About Me
+
+- 🏢 **Senior MTS** @ Zettabolt Technologies Pvt. Ltd.
+- 🎓 M.Tech Computer Science — NIT Nagpur
+- 🌍 Based in India
+- 🔥 Working on **Apache Spark**, **Meta Velox** & **Apache Gluten** for native query acceleration
+- 🤖 Building **PyTorch OOT** device backends for LLM acceleration on custom hardware
+- ⚡ Contributing to **vLLM** — high-throughput LLM inference engine
+- 🔌 **FPGA / Xilinx** — hardware-accelerated data pipelines
+- 🧠 5x speedup on Spark via Neuroblade SPU integration (now @ AWS)
+- 🛠️ Built **ZettaProf** — Spark profiling tool that cuts debug time by 60%
+- 🌱 Active OSS contributor — Apache Spark, Gluten, Velox, PyTorch, vLLM
+- 💬 Ask me about **Big Data, C++, LLM infra, distributed systems**
+- ⚡ Fun fact: I push query engines into silicon 🔌
+
+</td>
+<td valign="top" width="45%">
+
+<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="100%"/>
 <br/>
+<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=brijrajk&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&include_all_commits=true" width="100%"/>
+<br/>
+<img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" width="100%"/>
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=750&lines=Senior+MTS+%40+Zettabolt+Technologies+🏢;Apache+Spark+%7C+Meta+Velox+%7C+Apache+Gluten+🔥;PyTorch+OOT+Device+Backends+%7C+vLLM+🤖;LLM+Acceleration+on+Custom+Hardware+⚡;FPGA%2FXilinx+%7C+Hardware-Accelerated+SQL+🔌;5x+Spark+Speedup+via+Neuroblade+SPU+(now+%40+AWS)+🚀;Open+Source+Contributor+—+Velox+%7C+PyTorch+%7C+Spark+🌍" alt="Typing SVG"/>
-</div>
-
----
-
-<!-- TERMINAL BLOCK -->
-<div align="center">
-
-```bash
-$ whoami
-▶  brijrajk — Senior MTS @ Zettabolt Technologies Pvt. Ltd.
-
-$ cat expertise.txt
-▶  Native Query Acceleration   → Apache Spark + Velox + Gluten
-▶  LLM Inference Engineering   → PyTorch OOT Backends + vLLM + Custom HW
-▶  Hardware-Level Optimization → FPGA (Xilinx/AMD) + SPU Integration
-▶  Compiler & Runtime Systems  → C++ · Vectorization · Operator Dispatch
-▶  Open Source                 → Velox · PyTorch · Spark · Gluten · DuckDB
-
-$ cat impact.txt
-▶  5x Spark speedup via Neuroblade SPU (production @ AWS)
-▶  Built ZettaProf — cuts Spark debug time by 60%
-▶  Merged PRs in: pytorch/pytorch · facebookincubator/velox · apache/spark · duckdb/duckdb
-
-$ echo $CURRENT_FOCUS
-▶  PyTorch OOT Device  |  LLM Kernel Fusion  |  Velox Expression Engine
-```
-
-</div>
-
----
-
-## 🧬 Architecture of My Stack
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        APPLICATION LAYER                            │
-│          Apache Spark  ·  Apache Gluten  ·  vLLM  ·  Triton        │
-├─────────────────────────────────────────────────────────────────────┤
-│                         RUNTIME LAYER                               │
-│     Meta Velox  ·  PyTorch OOT Backends  ·  Custom Device Guards    │
-├─────────────────────────────────────────────────────────────────────┤
-│                        OPERATOR LAYER                               │
-│   ATen Ops  ·  Vectorized Kernels  ·  Kernel Fusion  ·  Dispatcher  │
-├─────────────────────────────────────────────────────────────────────┤
-│                        HARDWARE LAYER                               │
-│        FPGA (Xilinx/AMD)  ·  SPU  ·  GPU  ·  Custom ASIC           │
-└─────────────────────────────────────────────────────────────────────┘
-```
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🛠️ Tech Arsenal
 
-<div align="center">
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="42" height="42" alt="PyTorch" title="PyTorch"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="42" height="42" alt="C++" title="C++"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="42" height="42" alt="Python" title="Python"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="42" height="42" alt="Java" title="Java"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg" width="42" height="42" alt="Scala" title="Scala"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" width="42" height="42" alt="Kafka" title="Apache Kafka"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="42" height="42" alt="AWS" title="AWS"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="42" height="42" alt="Docker" title="Docker"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="42" height="42" alt="Kubernetes" title="Kubernetes"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="42" height="42" alt="Linux" title="Linux"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="42" height="42" alt="Git" title="Git"/>
+  &nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" width="42" height="42" alt="CMake" title="CMake"/>
+</p>
 
-**Core Languages**
-
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Scala](https://img.shields.io/badge/Scala-DC322F?style=for-the-badge&logo=scala&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
-
-**Big Data & Query Engines**
-
-![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
-![Apache Gluten](https://img.shields.io/badge/Apache%20Gluten-E25A1C?style=for-the-badge&logo=apache&logoColor=white)
-![Meta Velox](https://img.shields.io/badge/Meta%20Velox-0866FF?style=for-the-badge&logo=meta&logoColor=white)
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black)
-![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
-![Parquet](https://img.shields.io/badge/Apache%20Parquet-50ABF1?style=for-the-badge&logo=apache&logoColor=white)
-
-**AI / ML Infrastructure**
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![vLLM](https://img.shields.io/badge/vLLM-412991?style=for-the-badge&logo=openai&logoColor=white)
-![ONNX](https://img.shields.io/badge/ONNX-005CED?style=for-the-badge&logo=onnx&logoColor=white)
-![Triton](https://img.shields.io/badge/Triton-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-
-**Hardware & Systems**
-
-![FPGA](https://img.shields.io/badge/FPGA%20Xilinx-E01F27?style=for-the-badge&logo=amd&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![CMake](https://img.shields.io/badge/CMake-064F8C?style=for-the-badge&logo=cmake&logoColor=white)
-![LLVM](https://img.shields.io/badge/LLVM-262D3A?style=for-the-badge&logo=llvm&logoColor=white)
-
-**Cloud & DevOps**
-
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-
-</div>
+**Specialized domains:** Apache Spark · Apache Gluten · Velox · PyTorch OOT Backends · vLLM · LLM Acceleration · FPGA (Xilinx/AMD) · Data Analytics · Data Engineering · Parquet/Arrow · Column-store engines · Query optimization
 
 ---
 
 ## 📊 GitHub Stats
 
-<div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=brijrajk&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&include_all_commits=true&show=reviews,discussions_started,prs_merged,prs_merged_percentage" height="180"/>
-  &nbsp;
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=brijrajk&layout=compact&theme=github_dark&hide_border=true&title_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&langs_count=8" height="180"/>
-</div>
+<p align="center">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=brijrajk&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&include_all_commits=true" height="165"/>
+  &nbsp;&nbsp;
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=brijrajk&layout=compact&theme=github_dark&hide_border=true&title_color=58a6ff&text_color=c9d1d9&bg_color=0d1117&langs_count=8" height="165"/>
+</p>
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="180"/>
-</div>
-
----
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=brijrajk&theme=darkhub&no-frame=true&no-bg=true&margin-w=6&column=7&title=Stars,Followers,Commits,Repositories,PullRequest,Issues,MultiLanguage"/>
-</div>
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="165"/>
+</p>
 
 ---
 
 ## 🧩 LeetCode Stats
 
 <!-- LEETCODE_STATS_START -->
-<div align="center">
+<p align="center">
   <img src="assets/leetcode-profile.svg" alt="LeetCode Profile" width="100%"/>
-</div>
+</p>
 <!-- LEETCODE_STATS_END -->
 
 ---
 
 ## 📈 Contribution Activity
 
-<div align="center">
+<p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=brijrajk&theme=github-compact&hide_border=true&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff&area=true&area_color=1f6feb"/>
-</div>
+</p>
 
 ---
 
 ## 📊 Detailed GitHub Metrics
 
-<div align="center">
+<p align="center">
   <img src="https://raw.githubusercontent.com/brijrajk/brijrajk/main/github-metrics.svg" alt="GitHub Metrics"/>
-</div>
+</p>
 
 ---
 
-## ⚡ Performance Impact
+## 🌱 Currently Exploring
 
-<div align="center">
-
-| Project | What I Did | Impact |
-|:--------|:-----------|-------:|
-| **Neuroblade SPU × Spark** | Integrated custom SPU accelerator into Spark runtime | **5x query speedup** |
-| **ZettaProf** | Built Spark profiling & debug tool from scratch | **60% less debug time** |
-| **Velox** | C++ vectorized execution, geospatial ops, Parquet encoding | **5 PRs merged** |
-| **PyTorch** | Schema inference, fp16 overflow fix, F.pad validation | **1 PR merged** |
-| **Apache Spark** | Docs, Python API correctness, structured errors | **1 PR merged** |
-| **DuckDB** | COLUMNS() lambda body operator fix | **1 PR merged** |
-
-</div>
+```
+▶  PyTorch OOT Device     — custom accelerator backend, device guard, aten ops, dispatcher
+▶  LLM Acceleration       — inference optimization, kernel fusion, operator dispatch on custom HW
+▶  AI Agent Benchmarking  — evaluating benchmark validity & designing rigorous evaluations
+▶  Velox internals        — expression evaluation, vectorization, runtime optimization
+▶  FPGA-accelerated SQL   — pushing query engines into hardware
+```
 
 ---
 
 ## 🌍 Open Source Contributions
 
-Active contributor to major Big Data and AI infrastructure projects.
+Active contributor to major Big Data and AI projects. PRs span bug fixes, feature additions, test infrastructure, and documentation across the Spark/Velox/Gluten/PyTorch/vLLM ecosystem.
 
 > ✅ Merged · 🔄 Open · ❌ Closed without merge
 
@@ -250,83 +209,65 @@ Active contributor to major Big Data and AI infrastructure projects.
 
 ---
 
-## 🌱 Currently Exploring
-
-<div align="center">
-
-| Domain | What I'm Building |
-|:-------|:-----------------|
-| 🤖 **PyTorch OOT Device** | Custom accelerator backend · Device guard · ATen ops · Dispatcher |
-| ⚡ **LLM Acceleration** | Kernel fusion · Operator dispatch on custom HW · Inference optimization |
-| 🧠 **Velox Internals** | Expression evaluation · Vectorization · Runtime profiling |
-| 🔌 **FPGA-Accelerated SQL** | Pushing query engines into Xilinx/AMD hardware |
-| 📊 **AI Agent Benchmarking** | Rigorous evaluation design for LLM agents |
-
-</div>
-
----
-
 ## 📌 Featured Work
 
-<div align="center">
+Most of my production work lives in private repositories at [Zettabolt Technologies Private Limited](https://www.zettabolt.com). The best window into my hands-on contributions is the open source PRs above — real code, real reviews, real projects.
 
-Most of my production work lives in private repositories at [Zettabolt Technologies](https://www.zettabolt.com). My open source PRs above are the best window into my hands-on engineering.
+My pinned repos include forks of the projects I actively work in:
 
-| Fork | Project | Role |
-|:-----|:--------|:-----|
-| [🚀 incubator-gluten](https://github.com/brijrajk/incubator-gluten) | Apache Gluten | Velox backend, bloom filter, math ops |
-| [🧠 facebook-velox](https://github.com/brijrajk/facebook-velox) | Meta Velox | C++ vectorized engine, geospatial, Parquet |
-| [🔥 spark](https://github.com/brijrajk/spark) | Apache Spark | Python API, structured errors, docs |
-| [🤖 pytorch](https://github.com/brijrajk/pytorch) | PyTorch | OOT device backends, schema inference |
-
-</div>
+- 🚀 [apache/gluten](https://github.com/brijrajk/incubator-gluten) — Spark native execution offloading to Velox
+- 🧠 [facebookincubator/velox](https://github.com/brijrajk/facebook-velox) — C++ vectorized execution engine
+- 🔥 [apache/spark](https://github.com/brijrajk/spark) — Distributed analytics engine
+- 🤖 [pytorch/pytorch](https://github.com/brijrajk/pytorch) — OOT device backend work
 
 ---
 
-## 💬 Dev Philosophy
+## 💬 Dev Quote
 
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=The%20best%20performance%20improvement%20is%20the%20transition%20from%20the%20nonworking%20state%20to%20the%20working%20state&author=John%20Ousterhout"/>
-</div>
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=The%20best%20performance%20improvement%20is%20the%20transition%20from%20the%20nonworking%20state%20to%20the%20working%20state&author=John%20Ousterhout" />
+</p>
 
 ---
 
 ## 🐍 Contribution Snake
 
-<div align="center">
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg"/>
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake.svg"/>
     <img alt="github-snake" src="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg"/>
   </picture>
-</div>
+</p>
 
 ---
 
-## 🤝 Connect
+## 🤝 Connect With Me
 
-<div align="center">
+<p align="center">
   <a href="https://www.linkedin.com/in/brijrajkishore/">
     <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   &nbsp;
   <a href="mailto:brijrajk@github.com">
-    <img src="https://img.shields.io/badge/Drop%20a%20Mail-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Drop%20a%20Mail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
-</div>
+</p>
 
-<br/>
-
-<div align="center">
+<p align="center">
   <i>Open to conversations on Big Data infrastructure, accelerated computing & LLM systems.</i>
-</div>
+</p>
 
 ---
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,30:0a3d62,70:1a2332,100:0d1117&height=100&section=footer&animation=fadeIn"/>
-</div>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=80&section=footer&animation=fadeIn"/>
+</p>
 
-<div align="center">
+<p align="center">
   <i>"From the query engine to the transformer kernel — it's all just bytes waiting to go faster."</i>
-</div>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=brijrajk&color=58a6ff&style=flat-square&label=Profile+Views"/>
+</p>
