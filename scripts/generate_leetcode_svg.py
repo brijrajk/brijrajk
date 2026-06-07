@@ -84,7 +84,7 @@ def heatmap(cal_str, x0, y0, weeks=52):
             if day > today: continue
             ts = int(datetime(day.year,day.month,day.day,tzinfo=timezone.utc).timestamp())
             n  = cal.get(str(ts), 0)
-            c  = "#1a2a1a" if n==0 else "#0e4429" if n<=2 else "#006d32" if n<=5 else "#26a641" if n<=9 else "#39d353"
+            c  = "#161b22" if n==0 else "#196127" if n<=2 else "#239a3b" if n<=5 else "#2dbc4e" if n<=9 else "#40d463"
             out.append(f'<rect x="{x0+w*step}" y="{y0+d*step}" width="{cs}" height="{cs}" rx="2" fill="{c}"/>')
             if d==0:
                 m = day.strftime("%b")
@@ -335,7 +335,7 @@ def generate_svg(data):
 
 <!-- Legend -->
 <text x="236" y="610" fill="#4d5e6e" font-size="10" font-family="sans-serif">Less</text>
-{''.join([f'<rect x="{272+i*14}" y="598" width="11" height="11" rx="2" fill="{c}"/>' for i,c in enumerate(["#1a2a1a","#0e4429","#006d32","#26a641","#39d353"])])}
+{''.join([f'<rect x="{272+i*14}" y="598" width="11" height="11" rx="2" fill="{c}"/>' for i,c in enumerate(["#161b22","#196127","#239a3b","#2dbc4e","#40d463"])])}
 <text x="{272+5*14+4}" y="610" fill="#4d5e6e" font-size="10" font-family="sans-serif">More</text>
 
 </svg>'''
