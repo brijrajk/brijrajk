@@ -11,6 +11,10 @@
     <img height="28" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
   &nbsp;
+  <a href="https://leetcode.com/u/brij_raj/" target="_blank">
+    <img height="28" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+  </a>
+  &nbsp;
   <img height="28" src="https://img.shields.io/badge/India-🇮🇳-1a2332?style=for-the-badge"/>
   &nbsp;
   <img height="28" src="https://img.shields.io/badge/NIT%20Nagpur-M.Tech%20CS-1a2332?style=for-the-badge&logo=academia&logoColor=58a6ff"/>
@@ -100,6 +104,14 @@
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="165"/>
+</p>
+
+---
+
+## 🧩 LeetCode Stats
+
+<p align="center">
+  <img src="https://leetcard.jacoblin.cool/brij_raj?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&ring_color=58a6ff" width="500"/>
 </p>
 
 ---
