@@ -138,10 +138,13 @@ def build():
         statuses[(owner, repo, num)] = s
         print(s)
 
+    STATUS_ORDER = {"✅ Merged": 0, "🔄 Open": 1, "❌ Closed": 2, "❓ Unknown": 3}
+
     lines = ["<!-- CONTRIBUTIONS_START -->"]
     for owner, repo, heading in GROUPS:
         prs = [(n, d) for (o, r, n, d) in TRACKED if o==owner and r==repo]
         if not prs: continue
+        prs.sort(key=lambda nd: STATUS_ORDER.get(statuses.get((owner, repo, nd[0]), "❓ Unknown"), 3))
         lines += [f"### {heading}", "| PR | Description | Status |", "|----|-------------|--------|"]
         for num, desc in prs:
             s   = statuses.get((owner, repo, num), "❓ Unknown")
