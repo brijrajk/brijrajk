@@ -159,6 +159,9 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 | [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ✅ Merged |
 | [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
 | [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
+| [#187861](https://github.com/pytorch/pytorch/pull/187861) | [nn] Raise ValueError for norm_type=0 in lp_pool{1,2,3}d and LPPoolNd | ✅ Merged |
+| [#187908](https://github.com/pytorch/pytorch/pull/187908) | [fix] torch.where silently overflows fp16 scalars (issue #187429) | 🔄 Open |
+| [#188167](https://github.com/pytorch/pytorch/pull/188167) | [c10][cuda] Restore current device via RAII on the throwing path in CUDAGuardImpl | 🔄 Open |
 
 ### ⚡ vLLM
 | PR | Description | Status |
@@ -168,27 +171,36 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 ### 🚀 Apache Gluten
 | PR | Description | Status |
 |----|-------------|--------|
-| [#12199](https://github.com/apache/gluten/pull/12199) | [MINOR][VL] Re-enable stale ignored atan2 test in MathFunctionsValidateSuite | ✅ Merged |
-| [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | 🔄 Open |
 | [#12151](https://github.com/apache/gluten/pull/12151) | [GLUTEN-12013][VL] Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
+| [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | 🔄 Open |
+| [#12199](https://github.com/apache/gluten/pull/12199) | [MINOR][VL] Re-enable stale ignored atan2 test in MathFunctionsValidateSuite | ✅ Merged |
+| [#12332](https://github.com/apache/gluten/pull/12332) | [GLUTEN-12260][VL] Fix CheckOverflowTransformer passing wrong child dataType | ❌ Closed |
+| [#12333](https://github.com/apache/gluten/pull/12333) | [GLUTEN-11539][VL] Improve error message for unsupported spark.io.compression.codec in native shuffle | ✅ Merged |
+| [#12335](https://github.com/apache/gluten/pull/12335) | [GLUTEN-10992][VL] Fix MatchError for KeyGroupedPartitioning in native shuffle | 🔄 Open |
+| [#12360](https://github.com/apache/gluten/pull/12360) | [GLUTEN-11539][VL] Improve error message when spark.io.compression.codec=none | 🔄 Open |
+| [#12374](https://github.com/apache/gluten/pull/12374) | [UT][VL] Refresh TPC-H q19 plan stability golden file | 🔄 Open |
 
 ### 🧠 Velox
 | PR | Description | Status |
 |----|-------------|--------|
-| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer | ✅ Merged |
-| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | ✅ Merged |
-| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs | ✅ Merged |
-| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat: Register Spark transform_values function | ✅ Merged |
 | [#17668](https://github.com/facebookincubator/velox/pull/17668) | perf(tpcds): Eliminate redundant map allocations in toTableName and fromTableName | ✅ Merged |
+| [#17669](https://github.com/facebookincubator/velox/pull/17669) | feat: Register Spark transform_values function | ✅ Merged |
+| [#17675](https://github.com/facebookincubator/velox/pull/17675) | docs(geospatial): Expand convex_hull_agg and geometry_union_agg docs | ✅ Merged |
+| [#17676](https://github.com/facebookincubator/velox/pull/17676) | docs: Fix duplicate object description warnings in Sphinx doc build | ✅ Merged |
+| [#17677](https://github.com/facebookincubator/velox/pull/17677) | test(parquet): Verify WriterOptions::encoding is forwarded to Arrow writer | ✅ Merged |
 
 ### 🔥 Apache Spark
 | PR | Description | Status |
 |----|-------------|--------|
 | [#56154](https://github.com/apache/spark/pull/56154) | [SPARK-49798][DOCS] Fix inaccurate documentation of RuntimeConfig.get | ✅ Merged |
-| [#56250](https://github.com/apache/spark/pull/56250) | [SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except | ❌ Closed |
-| [#56248](https://github.com/apache/spark/pull/56248) | [SPARK-34679][DOCS] Add inferTimestamp option to JSON data source options table | ✅ Merged |
-| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
 | [#56174](https://github.com/apache/spark/pull/56174) | [SPARK-43847][PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
+| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
+| [#56248](https://github.com/apache/spark/pull/56248) | [SPARK-34679][DOCS] Add inferTimestamp option to JSON data source options table | ✅ Merged |
+| [#56250](https://github.com/apache/spark/pull/56250) | [SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except | ❌ Closed |
+| [#56469](https://github.com/apache/spark/pull/56469) | [SPARK-57418][DOCS] Add singleVariantColumn option to CSV, JSON, and XML data source options tables | ✅ Merged |
+| [#56473](https://github.com/apache/spark/pull/56473) | [SPARK-56367][SS][PYTHON][DOCS] Fix latestOffset docstring, update tutorial signature, and add Trigger.AvailableNow documentation | 🔄 Open |
+| [#56673](https://github.com/apache/spark/pull/56673) | [SPARK-43322][SQL] Document null/empty behavior in explode_outer and posexplode_outer | 🔄 Open |
+| [#56675](https://github.com/apache/spark/pull/56675) | [SPARK-47013][SS] Document spark.sql.streaming.minBatchesToRetain config | 🔄 Open |
 
 ### 📦 aws-samples/aws-etl-orchestrator
 | PR | Description | Status |
@@ -199,6 +211,8 @@ Active contributor to major Big Data and AI projects. PRs span bug fixes, featur
 | PR | Description | Status |
 |----|-------------|--------|
 | [#23104](https://github.com/duckdb/duckdb/pull/23104) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | ❌ Closed |
+| [#23363](https://github.com/duckdb/duckdb/pull/23363) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | 🔄 Open |
+| [#23366](https://github.com/duckdb/duckdb/pull/23366) | Fix *COLUMNS() false rejection when operator wraps function result | 🔄 Open |
 
 ### 📦 google/it-cert-automation-practice
 | PR | Description | Status |
