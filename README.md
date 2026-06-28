@@ -104,12 +104,6 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 > ✅ Merged · 🔄 Open · ❌ Closed without merge
 
 <!-- CONTRIBUTIONS_START -->
-<p align="center">
-  <img src="https://img.shields.io/badge/PRs%20Merged-12-2ea043?style=for-the-badge&logo=github&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PRs%20Open-19-1f6feb?style=for-the-badge&logo=github&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white"/>
-</p>
-
 ### 🤖 PyTorch
 | PR | Description | Status |
 |----|-------------|--------|
