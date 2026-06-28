@@ -130,30 +130,65 @@ def status(owner, repo, num):
         return "🔄 Open"
     return "❓ Unknown"
 
-def build():
+AUTHOR = "brijrajk"
+SEARCH = "https://github.com/search?type=pullrequests&q=is%3Apr+author%3A" + AUTHOR
+
+# Headline engines for the "Merged into ..." marquee.
+# (owner, repo, display_name, shields_logo_slug or None)
+BRANDS = [
+    ("pytorch",           "pytorch", "PyTorch",       "pytorch"),
+    ("apache",            "spark",   "Apache Spark",  "apachespark"),
+    ("facebookincubator", "velox",   "Velox",         "meta"),
+    ("apache",            "gluten",  "Apache Gluten", "apache"),
+    ("vllm-project",      "vllm",    "vLLM",          None),
+]
+
+def fetch_statuses():
     statuses = {}
     for owner, repo, num, _ in TRACKED:
         print(f"  {owner}/{repo}#{num} ...", end=" ", flush=True)
         s = status(owner, repo, num)
         statuses[(owner, repo, num)] = s
         print(s)
+    return statuses
 
-    STATUS_ORDER = {"✅ Merged": 0, "🔄 Open": 1, "❌ Closed": 2, "❓ Unknown": 3}
-
-    # Auto-computed scoreboard
+def build_scoreboard(statuses):
     merged = sum(1 for s in statuses.values() if s == "✅ Merged")
     openc  = sum(1 for s in statuses.values() if s == "🔄 Open")
     repos  = len({(o, r) for (o, r, n, _) in TRACKED})
-
-    lines = ["<!-- CONTRIBUTIONS_START -->"]
-    lines += [
+    return "\n".join([
+        "<!-- SCOREBOARD_START -->",
         "<p align=\"center\">",
-        f"  <img src=\"https://img.shields.io/badge/PRs%20Merged-{merged}-2ea043?style=for-the-badge&logo=github&logoColor=white\"/>",
-        f"  <img src=\"https://img.shields.io/badge/PRs%20Open-{openc}-1f6feb?style=for-the-badge&logo=github&logoColor=white\"/>",
-        f"  <img src=\"https://img.shields.io/badge/Upstream%20Repos-{repos}-8957e5?style=for-the-badge&logo=github&logoColor=white\"/>",
+        f"  <a href=\"{SEARCH}+is%3Amerged\"><img src=\"https://img.shields.io/badge/PRs%20Merged-{merged}-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117\"/></a>",
+        f"  <a href=\"{SEARCH}+is%3Aopen\"><img src=\"https://img.shields.io/badge/PRs%20Open-{openc}-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117\"/></a>",
+        f"  <a href=\"{SEARCH}\"><img src=\"https://img.shields.io/badge/Upstream%20Repos-{repos}-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117\"/></a>",
         "</p>",
-        "",
-    ]
+        "<!-- SCOREBOARD_END -->",
+    ])
+
+def build_mergedlogos(statuses):
+    lines = ["<!-- MERGEDLOGOS_START -->", "<p align=\"center\">"]
+    for owner, repo, name, logo in BRANDS:
+        ss = [s for (o, r, n), s in statuses.items() if o == owner and r == repo]
+        if "✅ Merged" in ss:
+            state, color = "✓", "2ea043"
+        elif "🔄 Open" in ss:
+            state, color = "active", "1f6feb"
+        else:
+            continue
+        label = name.replace(" ", "%20")
+        logo_q = f"&logo={logo}&logoColor=white" if logo else ""
+        href = f"https://github.com/{owner}/{repo}/pulls?q=is%3Apr+author%3A{AUTHOR}"
+        lines.append(
+            f"  <a href=\"{href}\"><img src=\"https://img.shields.io/badge/{label}-{state}-{color}"
+            f"?style=flat-square{logo_q}&labelColor=222\"/></a>"
+        )
+    lines += ["</p>", "<!-- MERGEDLOGOS_END -->"]
+    return "\n".join(lines)
+
+def build_contributions(statuses):
+    STATUS_ORDER = {"✅ Merged": 0, "🔄 Open": 1, "❌ Closed": 2, "❓ Unknown": 3}
+    lines = ["<!-- CONTRIBUTIONS_START -->"]
     for owner, repo, heading in GROUPS:
         prs = [(n, d) for (o, r, n, d) in TRACKED if o==owner and r==repo]
         if not prs: continue
@@ -167,14 +202,29 @@ def build():
     lines.append("<!-- CONTRIBUTIONS_END -->")
     return "\n".join(lines)
 
-def update(section):
+def update(fragments):
+    """fragments: {marker_name: rendered_block}. Each block is wrapped in its
+    own START/END markers; only present markers are replaced."""
     with open(README) as f: c = f.read()
-    new = re.sub(r'<!-- CONTRIBUTIONS_START -->.*?<!-- CONTRIBUTIONS_END -->', section, c, flags=re.DOTALL)
-    if new == c: print("WARNING: markers not found"); return
-    with open(README, "w") as f: f.write(new)
-    print("README updated")
+    orig = c
+    for marker, block in fragments.items():
+        pattern = rf'<!-- {marker}_START -->.*?<!-- {marker}_END -->'
+        c, n = re.subn(pattern, lambda _: block, c, flags=re.DOTALL)
+        if n == 0:
+            print(f"  WARNING: {marker} markers not found")
+        else:
+            print(f"  {marker} updated")
+    if c == orig:
+        print("WARNING: nothing changed")
+        return
+    with open(README, "w") as f: f.write(c)
 
 if __name__ == "__main__":
     print("Fetching PR statuses...")
-    update(build())
+    statuses = fetch_statuses()
+    update({
+        "SCOREBOARD":    build_scoreboard(statuses),
+        "MERGEDLOGOS":   build_mergedlogos(statuses),
+        "CONTRIBUTIONS": build_contributions(statuses),
+    })
     print("Done")

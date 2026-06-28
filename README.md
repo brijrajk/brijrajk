@@ -38,22 +38,32 @@ Optimizer rule applied:  "make it correct, then make it fly."   ⚡
 
 ## 📊 Live Dashboard
 
+<!-- SCOREBOARD_START -->
 <p align="center">
-  <img src="https://img.shields.io/badge/PRs%20Merged-12-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/>
-  <img src="https://img.shields.io/badge/PRs%20Open-19-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/>
-  <img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-12-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-19-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+</p>
+<!-- SCOREBOARD_END -->
+
+<p align="center">
   <img src="https://img.shields.io/badge/Spark%20Speedup-5×-58a6ff?style=for-the-badge&labelColor=0d1117"/>
   <img src="https://img.shields.io/badge/Debug%20Time-−60%25-58a6ff?style=for-the-badge&labelColor=0d1117"/>
 </p>
 
 <p align="center">
-  <i>Merged into the engines that run production data &amp; AI:</i><br/>
-  <img src="https://img.shields.io/badge/PyTorch-✓-2ea043?style=flat-square&logo=pytorch&logoColor=white&labelColor=222"/>
-  <img src="https://img.shields.io/badge/Apache%20Spark-✓-2ea043?style=flat-square&logo=apachespark&logoColor=white&labelColor=222"/>
-  <img src="https://img.shields.io/badge/Velox-✓-2ea043?style=flat-square&logo=meta&logoColor=white&labelColor=222"/>
-  <img src="https://img.shields.io/badge/Apache%20Gluten-✓-2ea043?style=flat-square&logo=apache&logoColor=white&labelColor=222"/>
-  <img src="https://img.shields.io/badge/vLLM-active-1f6feb?style=flat-square&labelColor=222"/>
+  <i>Merged into the engines that run production data &amp; AI — click any logo to see all my PRs there:</i>
 </p>
+
+<!-- MERGEDLOGOS_START -->
+<p align="center">
+  <a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/PyTorch-✓-2ea043?style=flat-square&logo=pytorch&logoColor=white&labelColor=222"/></a>
+  <a href="https://github.com/apache/spark/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Apache%20Spark-✓-2ea043?style=flat-square&logo=apachespark&logoColor=white&labelColor=222"/></a>
+  <a href="https://github.com/facebookincubator/velox/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Velox-✓-2ea043?style=flat-square&logo=meta&logoColor=white&labelColor=222"/></a>
+  <a href="https://github.com/apache/gluten/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Apache%20Gluten-✓-2ea043?style=flat-square&logo=apache&logoColor=white&labelColor=222"/></a>
+  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/vLLM-active-1f6feb?style=flat-square&labelColor=222"/></a>
+</p>
+<!-- MERGEDLOGOS_END -->
 
 <table align="center">
 <tr>
