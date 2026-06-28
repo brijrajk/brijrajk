@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=58A6FF&center=true&vCenter=true&width=820&lines=Systems+Engineer+for+LLM+Inference+Acceleration;PyTorch+OOT+backends+%C2%B7+vLLM+%C2%B7+kernel+fusion+on+custom+silicon;Transformer+kernels+%E2%86%92+GPU%2FCUDA+%E2%86%92+FPGA;Built+on+deep+Spark+%C2%B7+Velox+%C2%B7+Gluten+query-engine+roots" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=58A6FF&center=true&vCenter=true&width=840&lines=Systems+Engineer+for+LLM+Inference+Acceleration;PyTorch+OOT+device+backends+%C2%B7+vLLM+serving+%C2%B7+custom+silicon;Ran+Llama+%26+BERT+end-to-end+on+a+custom+device;Built+on+deep+Spark+%C2%B7+Velox+%C2%B7+Gluten+query-engine+roots" alt="Typing SVG" />
   </a>
 </p>
 
@@ -25,9 +25,10 @@ EXPLAIN ANALYZE SELECT focus FROM brij_raj_kishore;
 
 ══ Physical Plan ════════════════════════════════════════════════════════════
 LLMInferenceAccelerate                           ▏ ◄ primary focus
-├─ PyTorchOOTBackend  [device guard · aten ops · dispatcher]
-├─ vLLM               [high-throughput inference serving]
-├─ KernelFusion       [transformer ops → custom silicon]
+├─ PyTorchOOTBackend  [dispatch · kernels · device mem · streams]
+│    └─ OpInfo coverage → ran Llama & BERT end-to-end
+├─ CUDAParityHarness  [self-built correctness framework]
+├─ vLLMServing        [device plugin .to() / streams · in progress]
 └─ FPGA / Xilinx      [hardware-level execution]
 
 QueryEngineRoots      [Spark → Velox → Gluten]   ▏ foundation · 5× faster, native
@@ -194,9 +195,10 @@ Volume is cheap. Here's the kind of problem I actually chase down — the bug th
 
 Currently building the **systems layer that makes LLM inference fast on custom hardware** as **Senior MTS @ [Zettabolt](https://www.zettabolt.com)** — from the PyTorch dispatcher down to the FPGA:
 
-- 🧩 **PyTorch OOT device backends** — operator dispatch, kernel registration, device memory management for a custom accelerator
-- 🚄 **vLLM** — high-throughput inference serving paths
-- 🔥 **Kernel fusion + operator dispatch** for transformer workloads on custom silicon
+- 🧩 **PyTorch OOT device backend** — operator dispatch, kernel registration, device memory management, and streams for a custom accelerator
+- ✅ **Full OpInfo operator coverage** — ran **Llama & BERT inference end-to-end** on the custom device
+- 🛡️ **CUDA-parity testing framework** I built — validates backend operators against the CUDA reference in CI
+- 🚄 **vLLM serving** — extending the device plugin to vLLM (device `.to()`, streams, operator/kernel integration)
 - 🎯 **GPU / CUDA correctness & numerics** across backends (see the device-guard and fp16 bugs above)
 - ⚡ **100× PageRank speedup** integrating NVIDIA CUDA (C++) with TigerGraph — GPU-acceleration instincts that transfer straight to inference
 - 🔌 **FPGA / Xilinx** — pushing execution into hardware
@@ -209,7 +211,7 @@ Currently building the **systems layer that makes LLM inference fast on custom h
 
 ## 🛠️ Stack
 
-**LLM / Inference** &nbsp; PyTorch (OOT backends) · vLLM · kernel fusion · operator dispatch · NVIDIA CUDA · cuGraph · custom silicon
+**LLM / Inference** &nbsp; PyTorch (OOT device backend · dispatch · kernels · OpInfo · streams) · vLLM serving · CUDA-parity testing · NVIDIA CUDA · cuGraph
 **Languages** &nbsp; `C++` · `C` · `Python` · `Scala` · `Java`
 **Bare Metal / Hardware** &nbsp; FPGA (Xilinx/AMD) · AMD EPYC/AOCL · GDB · Valgrind · uProf · CMake · Ninja
 **Query Engines** *(foundation)* &nbsp; Apache Spark · Velox · Gluten · Hive · Hadoop · Kafka · Arrow/Parquet
