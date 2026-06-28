@@ -137,10 +137,10 @@ SEARCH = "https://github.com/search?type=pullrequests&q=is%3Apr+author%3A" + AUT
 # (owner, repo, display_name, shields_logo_slug or None)
 BRANDS = [
     ("pytorch",           "pytorch", "PyTorch",       "pytorch"),
+    ("vllm-project",      "vllm",    "vLLM",          None),
     ("apache",            "spark",   "Apache Spark",  "apachespark"),
     ("facebookincubator", "velox",   "Velox",         "meta"),
     ("apache",            "gluten",  "Apache Gluten", "apache"),
-    ("vllm-project",      "vllm",    "vLLM",          None),
 ]
 
 def fetch_statuses():

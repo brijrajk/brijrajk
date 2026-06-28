@@ -1,12 +1,12 @@
 <!-- ════════════════════ HERO ════════════════════ -->
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:1f6feb,100:0d1117&height=160&section=header&text=BRIJ%20RAJ%20KISHORE&fontSize=42&fontColor=ffffff&fontAlignY=58&animation=fadeIn&desc=From%20query%20plans%20→%20transformer%20kernels%20→%20silicon&descAlignY=80&descSize=16&descColor=58a6ff"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:1f6feb,100:0d1117&height=160&section=header&text=BRIJ%20RAJ%20KISHORE&fontSize=42&fontColor=ffffff&fontAlignY=58&animation=fadeIn&desc=LLM%20Inference%20Acceleration%20%C2%B7%20PyTorch%20OOT%20%C2%B7%20vLLM%20%C2%B7%20custom%20silicon&descAlignY=80&descSize=15&descColor=58a6ff"/>
 </p>
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=58A6FF&center=true&vCenter=true&width=760&lines=Senior+Systems+Engineer+%40+Zettabolt;I+make+query+engines+and+LLM+kernels+go+faster;Apache+Spark+%C2%B7+Velox+%C2%B7+Gluten+%C2%B7+PyTorch+%C2%B7+vLLM;5%C3%97+Spark+speedup+%C2%B7+native+execution+%C2%B7+custom+silicon" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=58A6FF&center=true&vCenter=true&width=820&lines=Systems+Engineer+for+LLM+Inference+Acceleration;PyTorch+OOT+backends+%C2%B7+vLLM+%C2%B7+kernel+fusion+on+custom+silicon;Transformer+kernels+%E2%86%92+GPU%2FCUDA+%E2%86%92+FPGA;Built+on+deep+Spark+%C2%B7+Velox+%C2%B7+Gluten+query-engine+roots" alt="Typing SVG" />
   </a>
 </p>
 
@@ -20,16 +20,20 @@
 <!-- ── Signature block: a self-profile only an engine/profiler person would write ── -->
 
 ```sql
-EXPLAIN ANALYZE SELECT impact FROM brij_raj_kishore WHERE domain = 'systems';
+EXPLAIN ANALYZE SELECT focus FROM brij_raj_kishore;
 
 ══ Physical Plan ════════════════════════════════════════════════════════════
-NativeAccelerate  [Spark → Velox → Gluten]      ▏ throughput ........ 5× faster
-└─ KernelFusion   [PyTorch OOT · vLLM]           ▏ target ....... custom silicon
-   └─ ProfileScan [ZettaProf, self-built]        ▏ debug time ......... −60%
-      └─ UpstreamMerge                            ▏ PRs ...... 12 merged / 8 repos
-         └─ Source: NIT Nagpur → Zettabolt → ?    ▏ langs ... C++ · Python · Scala
+LLMInferenceAccelerate                           ▏ ◄ primary focus
+├─ PyTorchOOTBackend  [device guard · aten ops · dispatcher]
+├─ vLLM               [high-throughput inference serving]
+├─ KernelFusion       [transformer ops → custom silicon]
+└─ FPGA / Xilinx      [hardware-level execution]
 
-Optimizer rule applied:  "make it correct, then make it fly."   ⚡
+QueryEngineRoots      [Spark → Velox → Gluten]   ▏ foundation · 5× faster, native
+   └─ same instincts:  kernels, native code, hardware, profiling
+
+Proof:      12 PRs merged across 8 upstream repos
+Optimizer:  "make it correct, then make it fly."   ⚡
 ```
 
 ---
@@ -52,16 +56,16 @@ Optimizer rule applied:  "make it correct, then make it fly."   ⚡
 </p>
 
 <p align="center">
-  <i>Merged into the engines that run production data &amp; AI — click any logo to see all my PRs there:</i>
+  <i>Contributing to the LLM &amp; data engines I accelerate — click any logo to see all my PRs there:</i>
 </p>
 
 <!-- MERGEDLOGOS_START -->
 <p align="center">
   <a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/PyTorch-✓-2ea043?style=flat-square&logo=pytorch&logoColor=white&labelColor=222"/></a>
+  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/vLLM-active-1f6feb?style=flat-square&labelColor=222"/></a>
   <a href="https://github.com/apache/spark/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Apache%20Spark-✓-2ea043?style=flat-square&logo=apachespark&logoColor=white&labelColor=222"/></a>
   <a href="https://github.com/facebookincubator/velox/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Velox-✓-2ea043?style=flat-square&logo=meta&logoColor=white&labelColor=222"/></a>
   <a href="https://github.com/apache/gluten/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Apache%20Gluten-✓-2ea043?style=flat-square&logo=apache&logoColor=white&labelColor=222"/></a>
-  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/vLLM-active-1f6feb?style=flat-square&labelColor=222"/></a>
 </p>
 <!-- MERGEDLOGOS_END -->
 
@@ -170,38 +174,41 @@ Optimizer rule applied:  "make it correct, then make it fly."   ⚡
 
 ---
 
-## 🔬 Three Bugs Worth Reading
+## 🔬 Bugs Worth Reading — Both Tracks
 
-Volume is cheap. Here's the kind of problem I actually chase down — the bug that hides behind a green CI run:
+Volume is cheap. Here's the kind of problem I actually chase down — the bug that hides behind a green CI run — across both the query-engine and LLM/GPU sides:
 
-| Where | What I found &amp; fixed |
-|-------|----------------------|
-| **[Gluten #12151](https://github.com/apache/gluten/pull/12151)** | A whole-stage transform falling back to vanilla Spark mid-query **silently corrupted serialized bloom-filter bytes**. Root-caused the native↔JVM lifecycle mismatch and fixed the byte handoff. |
-| **[PyTorch #185756](https://github.com/pytorch/pytorch/pull/185756)** | `clamp` **accepted an fp16-overflowing scalar on CPU but rejected it on GPU** — a silent cross-device divergence. Tracked down the inconsistent overflow check and aligned both backends. |
-| **[Velox #17668](https://github.com/facebookincubator/velox/pull/17668)** | Killed redundant per-call map allocations in `toTableName`/`fromTableName` on a **hot path hit across the entire TPC-DS suite**. |
+| Track | Where | What I found &amp; fixed |
+|-------|-------|----------------------|
+| 🤖 LLM / GPU | **[PyTorch #188167](https://github.com/pytorch/pytorch/pull/188167)** | A throw inside a CUDA op could leave the **current device switched** — silently corrupting state for every kernel that ran after it. Fixed with RAII so the device is always restored on the error path. |
+| 🤖 LLM / GPU | **[PyTorch #185756](https://github.com/pytorch/pytorch/pull/185756)** | `clamp` **accepted an fp16-overflowing scalar on CPU but rejected it on GPU** — a silent cross-device numeric divergence. Tracked down the inconsistent overflow check and aligned both backends. |
+| 🚀 Query | **[Gluten #12151](https://github.com/apache/gluten/pull/12151)** | A whole-stage transform falling back to vanilla Spark mid-query **silently corrupted serialized bloom-filter bytes**. Root-caused the native↔JVM lifecycle mismatch and fixed the byte handoff. |
+| 🚀 Query | **[Velox #17668](https://github.com/facebookincubator/velox/pull/17668)** | Killed redundant per-call map allocations in `toTableName`/`fromTableName` on a **hot path hit across the entire TPC-DS suite**. |
 
 ---
 
-## 🧭 What I Do
+## 🧭 Focus — LLM Inference Acceleration
 
-I live where **distributed query engines, ML frameworks, and custom hardware** collide:
+I build the **systems layer that makes LLM inference fast on custom hardware** — from the PyTorch dispatcher down to the FPGA:
 
-- 🏢 **Senior MTS @ [Zettabolt](https://www.zettabolt.com)** — native query acceleration on **Spark + Velox + Gluten**
-- ⚡ Drove a **5× Spark speedup** integrating the Neuroblade SPU (since acquired by AWS); built **ZettaProf**, a profiler that cut debug time **60%**
-- 🤖 Building **PyTorch OOT** device backends + **vLLM** paths for LLM inference on custom silicon
-- 🔌 **FPGA / Xilinx** — pushing query engines into hardware
-- 🎓 M.Tech CS, **NIT Nagpur** · 🌍 India
+- 🧩 **PyTorch OOT device backends** — device guard, aten ops, dispatcher for a custom accelerator
+- 🚄 **vLLM** — high-throughput inference serving paths
+- 🔥 **Kernel fusion + operator dispatch** for transformer workloads on custom silicon
+- 🎯 **GPU / CUDA correctness & numerics** across backends (see the device-guard and fp16 bugs above)
+- 🔌 **FPGA / Xilinx** — pushing inference execution into hardware
 
-**Upstream day-to-day** (forks I work in): [`apache/gluten`](https://github.com/brijrajk/incubator-gluten) · [`facebookincubator/velox`](https://github.com/brijrajk/facebook-velox) · [`apache/spark`](https://github.com/brijrajk/spark) · [`pytorch/pytorch`](https://github.com/brijrajk/pytorch)
+> **The foundation that makes me good at it:** years deep in production query engines — **Senior MTS @ [Zettabolt](https://www.zettabolt.com)** on **Spark + Velox + Gluten**, where I drove a **5× Spark speedup** (Neuroblade SPU, since acquired by AWS) and built **ZettaProf** (−60% debug time). LLM inference acceleration demands the *exact same instincts* — native code, kernels, hardware, and relentless profiling. I'm bringing query-engine rigor to the transformer stack.
+
+🎓 M.Tech CS, **NIT Nagpur** &nbsp;·&nbsp; 🌍 India &nbsp;·&nbsp; **Upstream** (forks I work in): [`pytorch/pytorch`](https://github.com/brijrajk/pytorch) · [`vllm-project/vllm`](https://github.com/vllm-project/vllm) · [`apache/gluten`](https://github.com/brijrajk/incubator-gluten) · [`facebookincubator/velox`](https://github.com/brijrajk/facebook-velox) · [`apache/spark`](https://github.com/brijrajk/spark)
 
 ---
 
 ## 🛠️ Stack
 
+**LLM / Inference** &nbsp; PyTorch (OOT backends) · vLLM · kernel fusion · operator dispatch · CUDA · custom silicon
 **Languages** &nbsp; `C++` · `Python` · `Scala` · `Java`
-**Data / ML** &nbsp; Apache Spark · Velox · Gluten · PyTorch · vLLM · Arrow/Parquet
-**Systems** &nbsp; FPGA (Xilinx/AMD) · CMake · Linux · query optimization · vectorized execution
-**Infra** &nbsp; AWS · Docker · Kubernetes · Kafka
+**Query Engines** *(foundation)* &nbsp; Apache Spark · Velox · Gluten · Arrow/Parquet · vectorized execution
+**Hardware / Infra** &nbsp; FPGA (Xilinx/AMD) · AWS · Docker · Kubernetes · CMake · Linux
 
 <details>
 <summary>📈 Detailed metrics · LeetCode · contribution snake</summary>
