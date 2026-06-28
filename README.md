@@ -11,6 +11,7 @@
 </p>
 
 <p align="center">
+  <a href="assets/Brij_Raj_Kishore_Resume.pdf"><img src="https://img.shields.io/badge/📄%20Résumé-1f6feb?style=for-the-badge&logoColor=white"/></a>
   <a href="https://www.linkedin.com/in/brijrajkishore/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
   <a href="mailto:brijraj31@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
   <a href="https://leetcode.com/u/brij_raj/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/></a>
@@ -51,7 +52,9 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 <!-- SCOREBOARD_END -->
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Spark%20Speedup-5×-58a6ff?style=for-the-badge&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/PageRank-100×%20(CUDA)-58a6ff?style=for-the-badge&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/Spark-5×%20vs%20vanilla-58a6ff?style=for-the-badge&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/vs%20Gluten-2×-58a6ff?style=for-the-badge&labelColor=0d1117"/>
   <img src="https://img.shields.io/badge/Debug%20Time-−60%25-58a6ff?style=for-the-badge&labelColor=0d1117"/>
 </p>
 
@@ -189,29 +192,38 @@ Volume is cheap. Here's the kind of problem I actually chase down — the bug th
 
 ## 🧭 Focus — LLM Inference Acceleration
 
-I build the **systems layer that makes LLM inference fast on custom hardware** — from the PyTorch dispatcher down to the FPGA:
+Currently building the **systems layer that makes LLM inference fast on custom hardware** as **Senior MTS @ [Zettabolt](https://www.zettabolt.com)** — from the PyTorch dispatcher down to the FPGA:
 
-- 🧩 **PyTorch OOT device backends** — device guard, aten ops, dispatcher for a custom accelerator
+- 🧩 **PyTorch OOT device backends** — operator dispatch, kernel registration, device memory management for a custom accelerator
 - 🚄 **vLLM** — high-throughput inference serving paths
 - 🔥 **Kernel fusion + operator dispatch** for transformer workloads on custom silicon
 - 🎯 **GPU / CUDA correctness & numerics** across backends (see the device-guard and fp16 bugs above)
-- 🔌 **FPGA / Xilinx** — pushing inference execution into hardware
+- ⚡ **100× PageRank speedup** integrating NVIDIA CUDA (C++) with TigerGraph — GPU-acceleration instincts that transfer straight to inference
+- 🔌 **FPGA / Xilinx** — pushing execution into hardware
 
-> **The foundation that makes me good at it:** years deep in production query engines — **Senior MTS @ [Zettabolt](https://www.zettabolt.com)** on **Spark + Velox + Gluten**, where I drove a **5× Spark speedup** (Neuroblade SPU, since acquired by AWS) and built **ZettaProf** (−60% debug time). LLM inference acceleration demands the *exact same instincts* — native code, kernels, hardware, and relentless profiling. I'm bringing query-engine rigor to the transformer stack.
+> **The foundation that makes me good at it — 5+ years deep in production query engines:** I drove a **5× Spark speedup** (Neuroblade SPU, since acquired by AWS) — 2× over Apache Gluten — by offloading Scan/Filter/Aggregation to hardware via Velox; delivered another **5× on AMD EPYC** integrating AMD AOCL with Gluten/Velox; and built **ZettaProf**, a Spark profiler that cut debug time **60%**. LLM inference acceleration demands the *exact same instincts* — native code, kernels, hardware, relentless profiling. I'm bringing query-engine rigor to the transformer stack.
 
-🎓 M.Tech CS, **NIT Nagpur** &nbsp;·&nbsp; 🌍 India &nbsp;·&nbsp; **Upstream** (forks I work in): [`pytorch/pytorch`](https://github.com/brijrajk/pytorch) · [`vllm-project/vllm`](https://github.com/vllm-project/vllm) · [`apache/gluten`](https://github.com/brijrajk/incubator-gluten) · [`facebookincubator/velox`](https://github.com/brijrajk/facebook-velox) · [`apache/spark`](https://github.com/brijrajk/spark)
+🎓 M.Tech CS, **NIT Nagpur** &nbsp;·&nbsp; 🌍 Noida, Delhi/NCR, India &nbsp;·&nbsp; **Upstream** (forks I work in): [`pytorch/pytorch`](https://github.com/brijrajk/pytorch) · [`vllm-project/vllm`](https://github.com/vllm-project/vllm) · [`apache/gluten`](https://github.com/brijrajk/incubator-gluten) · [`facebookincubator/velox`](https://github.com/brijrajk/facebook-velox) · [`apache/spark`](https://github.com/brijrajk/spark)
 
 ---
 
 ## 🛠️ Stack
 
-**LLM / Inference** &nbsp; PyTorch (OOT backends) · vLLM · kernel fusion · operator dispatch · CUDA · custom silicon
-**Languages** &nbsp; `C++` · `Python` · `Scala` · `Java`
-**Query Engines** *(foundation)* &nbsp; Apache Spark · Velox · Gluten · Arrow/Parquet · vectorized execution
-**Hardware / Infra** &nbsp; FPGA (Xilinx/AMD) · AWS · Docker · Kubernetes · CMake · Linux
+**LLM / Inference** &nbsp; PyTorch (OOT backends) · vLLM · kernel fusion · operator dispatch · NVIDIA CUDA · cuGraph · custom silicon
+**Languages** &nbsp; `C++` · `C` · `Python` · `Scala` · `Java`
+**Bare Metal / Hardware** &nbsp; FPGA (Xilinx/AMD) · AMD EPYC/AOCL · GDB · Valgrind · uProf · CMake · Ninja
+**Query Engines** *(foundation)* &nbsp; Apache Spark · Velox · Gluten · Hive · Hadoop · Kafka · Arrow/Parquet
+**Cloud & Observability** &nbsp; AWS · Microsoft Fabric · Azure Data Factory · Docker · Linux · Flamegraph · Grafana · Netdata
 
 <details>
-<summary>📈 Detailed metrics · LeetCode · contribution snake</summary>
+<summary>🏆 Achievements · 📈 detailed metrics · LeetCode · contribution snake</summary>
+
+<br/>
+
+- 🥇 **GATE CSE 2019** — 97th percentile
+- 💻 **Google Code Jam 2020** — Rank 6448 / 44,434
+- 🧠 **TCS CodeVita 2016** — 414 AIR (Round 1) · 1st & 2nd college rank
+- ⚙️ Earlier: **NXP Semiconductors** (Bluetooth/WiFi firmware in C) · **TCS** (POS REST APIs)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/brijrajk/brijrajk/main/github-metrics.svg" alt="GitHub Metrics"/>
