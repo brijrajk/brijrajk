@@ -215,8 +215,13 @@ I live where **distributed query engines, ML frameworks, and custom hardware** c
 ---
 
 <p align="center">
-  <b>Open to conversations on Big Data infrastructure, accelerated computing &amp; LLM systems.</b><br/>
-  <a href="https://www.linkedin.com/in/brijrajkishore/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:brijraj31@gmail.com">brijraj31@gmail.com</a>
+  <b>Open to conversations on Big Data infrastructure, accelerated computing &amp; LLM systems.</b>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/brijrajkishore/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  &nbsp;
+  <a href="mailto:brijraj31@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
 <p align="center">
