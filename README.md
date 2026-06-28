@@ -85,8 +85,7 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 </table>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" width="49%"/>
-  <img src="https://github-profile-trophy.vercel.app/?username=brijrajk&theme=onedark&no-frame=true&no-bg=true&column=4&margin-w=4&title_color=58a6ff" width="49%"/>
+  <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" width="60%"/>
 </p>
 
 <p align="center">
