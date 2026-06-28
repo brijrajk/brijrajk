@@ -140,7 +140,20 @@ def build():
 
     STATUS_ORDER = {"✅ Merged": 0, "🔄 Open": 1, "❌ Closed": 2, "❓ Unknown": 3}
 
+    # Auto-computed scoreboard
+    merged = sum(1 for s in statuses.values() if s == "✅ Merged")
+    openc  = sum(1 for s in statuses.values() if s == "🔄 Open")
+    repos  = len({(o, r) for (o, r, n, _) in TRACKED})
+
     lines = ["<!-- CONTRIBUTIONS_START -->"]
+    lines += [
+        "<p align=\"center\">",
+        f"  <img src=\"https://img.shields.io/badge/PRs%20Merged-{merged}-2ea043?style=for-the-badge&logo=github&logoColor=white\"/>",
+        f"  <img src=\"https://img.shields.io/badge/PRs%20Open-{openc}-1f6feb?style=for-the-badge&logo=github&logoColor=white\"/>",
+        f"  <img src=\"https://img.shields.io/badge/Upstream%20Repos-{repos}-8957e5?style=for-the-badge&logo=github&logoColor=white\"/>",
+        "</p>",
+        "",
+    ]
     for owner, repo, heading in GROUPS:
         prs = [(n, d) for (o, r, n, d) in TRACKED if o==owner and r==repo]
         if not prs: continue
