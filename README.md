@@ -47,7 +47,7 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 <!-- SCOREBOARD_START -->
 <p align="center">
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-12-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-19-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-18-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
 </p>
 <!-- SCOREBOARD_END -->
@@ -127,8 +127,8 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 | [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | 🔄 Open |
 | [#12335](https://github.com/apache/gluten/pull/12335) | [GLUTEN-10992][VL] Fix MatchError for KeyGroupedPartitioning in native shuffle | 🔄 Open |
 | [#12360](https://github.com/apache/gluten/pull/12360) | [GLUTEN-11539][VL] Improve error message when spark.io.compression.codec=none | 🔄 Open |
-| [#12374](https://github.com/apache/gluten/pull/12374) | [UT][VL] Refresh TPC-H q19 plan stability golden file | 🔄 Open |
 | [#12332](https://github.com/apache/gluten/pull/12332) | [GLUTEN-12260][VL] Fix CheckOverflowTransformer passing wrong child dataType | ❌ Closed |
+| [#12374](https://github.com/apache/gluten/pull/12374) | [UT][VL] Refresh TPC-H q19 plan stability golden file | ❌ Closed |
 
 ### 🧠 Velox
 | PR | Description | Status |
