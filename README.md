@@ -46,8 +46,8 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 
 <!-- SCOREBOARD_START -->
 <p align="center">
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-14-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-16-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-15-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-15-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
 </p>
 <!-- SCOREBOARD_END -->
@@ -108,10 +108,10 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 |----|-------------|--------|
 | [#185694](https://github.com/pytorch/pytorch/pull/185694) | [library] Improve infer_schema error message when future annotations cause NameError | ✅ Merged |
 | [#187861](https://github.com/pytorch/pytorch/pull/187861) | [nn] Raise ValueError for norm_type=0 in lp_pool{1,2,3}d and LPPoolNd | ✅ Merged |
+| [#188167](https://github.com/pytorch/pytorch/pull/188167) | [c10][cuda] Restore current device via RAII on the throwing path in CUDAGuardImpl | ✅ Merged |
 | [#185756](https://github.com/pytorch/pytorch/pull/185756) | [clamp] Fix float16 scalar overflow check inconsistency between CPU and GPU | 🔄 Open |
 | [#185751](https://github.com/pytorch/pytorch/pull/185751) | [nn] Raise ValueError early for invalid (ndim, pad_size) in non-constant F.pad modes | 🔄 Open |
 | [#187908](https://github.com/pytorch/pytorch/pull/187908) | [fix] torch.where silently overflows fp16 scalars (issue #187429) | 🔄 Open |
-| [#188167](https://github.com/pytorch/pytorch/pull/188167) | [c10][cuda] Restore current device via RAII on the throwing path in CUDAGuardImpl | 🔄 Open |
 
 ### ⚡ vLLM
 | PR | Description | Status |
