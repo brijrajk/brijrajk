@@ -46,8 +46,8 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 
 <!-- SCOREBOARD_START -->
 <p align="center">
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-15-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-15-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-16-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-14-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
 </p>
 <!-- SCOREBOARD_END -->
@@ -121,12 +121,12 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 ### 🚀 Apache Gluten
 | PR | Description | Status |
 |----|-------------|--------|
+| [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | ✅ Merged |
 | [#12199](https://github.com/apache/gluten/pull/12199) | [MINOR][VL] Re-enable stale ignored atan2 test in MathFunctionsValidateSuite | ✅ Merged |
 | [#12333](https://github.com/apache/gluten/pull/12333) | [GLUTEN-11539][VL] Improve error message for unsupported spark.io.compression.codec in native shuffle | ✅ Merged |
 | [#12335](https://github.com/apache/gluten/pull/12335) | [GLUTEN-10992][VL] Fix MatchError for KeyGroupedPartitioning in native shuffle | ✅ Merged |
 | [#12360](https://github.com/apache/gluten/pull/12360) | [GLUTEN-11539][VL] Improve error message when spark.io.compression.codec=none | ✅ Merged |
 | [#12151](https://github.com/apache/gluten/pull/12151) | [GLUTEN-12013][VL] Fix bloom-filter bytes corruption on whole-stage AQE fallback | 🔄 Open |
-| [#12158](https://github.com/apache/gluten/pull/12158) | [GLUTEN-12157][VL] Fix silently-skipped math/scalar test suites; add Velox native tests for sin, tan, tanh, radians, ln | 🔄 Open |
 | [#12332](https://github.com/apache/gluten/pull/12332) | [GLUTEN-12260][VL] Fix CheckOverflowTransformer passing wrong child dataType | ❌ Closed |
 | [#12374](https://github.com/apache/gluten/pull/12374) | [UT][VL] Refresh TPC-H q19 plan stability golden file | ❌ Closed |
 
