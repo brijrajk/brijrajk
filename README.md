@@ -46,8 +46,8 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 
 <!-- SCOREBOARD_START -->
 <p align="center">
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-16-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-14-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-17-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-13-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
 </p>
 <!-- SCOREBOARD_END -->
@@ -66,7 +66,7 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 <!-- MERGEDLOGOS_START -->
 <p align="center">
   <a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/PyTorch-✓-2ea043?style=flat-square&logo=pytorch&logoColor=white&labelColor=222"/></a>
-  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/vLLM-active-1f6feb?style=flat-square&labelColor=222"/></a>
+  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/vLLM-✓-2ea043?style=flat-square&labelColor=222"/></a>
   <a href="https://github.com/apache/spark/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Apache%20Spark-✓-2ea043?style=flat-square&logo=apachespark&logoColor=white&labelColor=222"/></a>
   <a href="https://github.com/facebookincubator/velox/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Velox-✓-2ea043?style=flat-square&logo=meta&logoColor=white&labelColor=222"/></a>
   <a href="https://github.com/apache/gluten/pulls?q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Apache%20Gluten-✓-2ea043?style=flat-square&logo=apache&logoColor=white&labelColor=222"/></a>
@@ -116,7 +116,7 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 ### ⚡ vLLM
 | PR | Description | Status |
 |----|-------------|--------|
-| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate Step3VL under Transformers v5 | 🔄 Open |
+| [#44349](https://github.com/vllm-project/vllm/pull/44349) | [Tests] Gate Step3VL under Transformers v5 | ✅ Merged |
 
 ### 🚀 Apache Gluten
 | PR | Description | Status |
