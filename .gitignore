@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.vscode/
+
+# LaTeX build artifacts (résumé is compiled on Overleaf; only .tex and .pdf are tracked)
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk

@@ -17,6 +17,7 @@ from urllib.request import urlopen, Request
 from urllib.error import URLError
 
 README = "README.md"
+RESUME = "assets/Brij_Raj_Kishore_Resume.tex"
 TOKEN  = os.environ.get("GITHUB_TOKEN", "")
 
 # (owner, repo, pr_number, description)
@@ -186,6 +187,79 @@ def build_mergedlogos(statuses):
     lines += ["</p>", "<!-- MERGEDLOGOS_END -->"]
     return "\n".join(lines)
 
+# Résumé macro generation.
+# Ordered as the résumé lists them. The macro suffix must be letters only —
+# TeX control sequences cannot contain digits or hyphens.
+# (owner, repo, display name, macro suffix)
+RESUME_PROJECTS = [
+    ("pytorch",           "pytorch", "PyTorch",       "PyTorch"),
+    ("vllm-project",      "vllm",    "vLLM",          "vLLM"),
+    ("facebookincubator", "velox",   "Meta Velox",    "Velox"),
+    ("apache",            "spark",   "Apache Spark",  "Spark"),
+    ("apache",            "gluten",  "Apache Gluten", "Gluten"),
+    ("duckdb",            "duckdb",  "DuckDB",        "DuckDB"),
+]
+
+def build_resume_stats(statuses):
+    """Rewrite the \\newcommand block in the résumé .tex.
+
+    Only counts are generated — the prose around them stays hand-written.
+    A project appears in \\prMergedProjects once it has its first merged PR,
+    but its bullet in the résumé body is still added by hand on purpose:
+    auto-injecting raw PR titles into a résumé reads badly.
+    """
+    merged = sum(1 for s in statuses.values() if s == "✅ Merged")
+    openc  = sum(1 for s in statuses.values() if s == "🔄 Open")
+    repos  = len({(o, r) for (o, r, n, _) in TRACKED})
+
+    per = {}
+    for owner, repo, _name, macro in RESUME_PROJECTS:
+        per[macro] = sum(1 for (o, r, _n), s in statuses.items()
+                         if o == owner and r == repo and s == "✅ Merged")
+
+    names = [n for (_o, _r, n, m) in RESUME_PROJECTS if per[m] > 0]
+    if len(names) > 1:
+        projects = ", ".join(names[:-1]) + ", and " + names[-1]
+    elif names:
+        projects = names[0]
+    else:
+        projects = "upstream projects"
+
+    lines = [
+        "<!-- PRSTATS_START -->",
+        f"\\newcommand{{\\prMerged}}{{{merged}}}",
+        f"\\newcommand{{\\prOpen}}{{{openc}}}",
+        f"\\newcommand{{\\prRepos}}{{{repos}}}",
+        f"\\newcommand{{\\prMergedProjects}}{{{projects}}}",
+    ]
+    for _owner, _repo, _name, macro in RESUME_PROJECTS:
+        lines.append(f"\\newcommand{{\\prMerged{macro}}}{{{per[macro]}}}")
+    # The '% ' prefix on the END marker sits inside the replaced span, so it
+    # must be re-emitted here; the one on START is outside and survives.
+    lines.append("% <!-- PRSTATS_END -->")
+    return "\n".join(lines)
+
+def update_proof_line(statuses):
+    """Fix the hand-written tally inside the fenced SQL block in the README.
+
+    It lives in a code fence, so HTML comment markers would render literally —
+    hence a targeted regex instead of a START/END span.
+    """
+    merged = sum(1 for s in statuses.values() if s == "✅ Merged")
+    repos  = len({(o, r) for (o, r, n, _) in TRACKED})
+    with open(README) as f: c = f.read()
+    pattern = r'Proof:(\s+)\d+ PRs merged across \d+ upstream repos'
+    c2, n = re.subn(pattern,
+                    lambda m: f"Proof:{m.group(1)}{merged} PRs merged across {repos} upstream repos",
+                    c)
+    if n == 0:
+        print("  WARNING: proof line not found")
+    elif c2 != c:
+        with open(README, "w") as f: f.write(c2)
+        print(f"  proof line updated -> {merged} PRs / {repos} repos")
+    else:
+        print("  proof line already current")
+
 def build_contributions(statuses):
     STATUS_ORDER = {"✅ Merged": 0, "🔄 Open": 1, "❌ Closed": 2, "❓ Unknown": 3}
     lines = ["<!-- CONTRIBUTIONS_START -->"]
@@ -202,29 +276,36 @@ def build_contributions(statuses):
     lines.append("<!-- CONTRIBUTIONS_END -->")
     return "\n".join(lines)
 
-def update(fragments):
+def update(path, fragments):
     """fragments: {marker_name: rendered_block}. Each block is wrapped in its
     own START/END markers; only present markers are replaced."""
-    with open(README) as f: c = f.read()
+    if not os.path.exists(path):
+        print(f"  WARNING: {path} not found, skipping")
+        return
+    with open(path) as f: c = f.read()
     orig = c
     for marker, block in fragments.items():
         pattern = rf'<!-- {marker}_START -->.*?<!-- {marker}_END -->'
+        # lambda replacement: the block contains backslashes (\newcommand) that
+        # re.sub would otherwise interpret as escape sequences.
         c, n = re.subn(pattern, lambda _: block, c, flags=re.DOTALL)
         if n == 0:
-            print(f"  WARNING: {marker} markers not found")
+            print(f"  WARNING: [{path}] {marker} markers not found")
         else:
-            print(f"  {marker} updated")
+            print(f"  [{path}] {marker} updated")
     if c == orig:
-        print("WARNING: nothing changed")
+        print(f"  [{path}] no change")
         return
-    with open(README, "w") as f: f.write(c)
+    with open(path, "w") as f: f.write(c)
 
 if __name__ == "__main__":
     print("Fetching PR statuses...")
     statuses = fetch_statuses()
-    update({
+    update(README, {
         "SCOREBOARD":    build_scoreboard(statuses),
         "MERGEDLOGOS":   build_mergedlogos(statuses),
         "CONTRIBUTIONS": build_contributions(statuses),
     })
+    update_proof_line(statuses)
+    update(RESUME, {"PRSTATS": build_resume_stats(statuses)})
     print("Done")

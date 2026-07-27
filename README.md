@@ -34,7 +34,7 @@ LLMInferenceAccelerate                           ▏ ◄ primary focus
 QueryEngineRoots      [Spark → Velox → Gluten]   ▏ foundation · 5× faster, native
    └─ same instincts:  kernels, native code, hardware, profiling
 
-Proof:      12 PRs merged across 8 upstream repos
+Proof:      18 PRs merged across 8 upstream repos
 Optimizer:  "make it correct, then make it fly."   ⚡
 ```
 
@@ -210,6 +210,54 @@ Currently building the **systems layer that makes LLM inference fast on custom h
 > **The foundation that makes me good at it — 5+ years deep in production query engines:** I drove a **5× Spark speedup** (Neuroblade SPU, since acquired by AWS) — 2× over Apache Gluten — by offloading Scan/Filter/Aggregation to hardware via Velox; delivered another **5× on AMD EPYC** integrating AMD AOCL with Gluten/Velox; and built **ZettaProf**, a Spark profiler that cut debug time **60%**. LLM inference acceleration demands the *exact same instincts* — native code, kernels, hardware, relentless profiling. I'm bringing query-engine rigor to the transformer stack.
 
 🎓 M.Tech CS, **NIT Nagpur** &nbsp;·&nbsp; 🌍 Noida, Delhi/NCR, India &nbsp;·&nbsp; **Upstream** (forks I work in): [`pytorch/pytorch`](https://github.com/brijrajk/pytorch) · [`vllm-project/vllm`](https://github.com/vllm-project/vllm) · [`apache/gluten`](https://github.com/brijrajk/incubator-gluten) · [`facebookincubator/velox`](https://github.com/brijrajk/facebook-velox) · [`apache/spark`](https://github.com/brijrajk/spark)
+
+---
+
+<!-- ════════════════════ AI-ASSISTED ENGINEERING ════════════════════ -->
+
+## 🤖 How I Work — An Agent Harness I Built for Backend Work
+
+> Everyone uses AI now. The interesting question is what you *build* with it. I engineer the harness: **79 files · ~7,000 lines** of domain-specific skills, subagents, and enforcement hooks that make an agent trustworthy inside a million-line C++ codebase.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Skills-46%20files%20·%203.7k%20lines-1f6feb?style=for-the-badge&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/Subagents-22-8957e5?style=for-the-badge&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/Enforcement%20Hooks-11-2ea043?style=for-the-badge&labelColor=0d1117"/>
+</p>
+
+**The problem it solves.** An LLM loose in a huge C++ codebase does two things badly: it invents citations, and it has no idea which files are dangerous to touch. Both are fatal when the output is an upstream patch. So the harness is built around *verification and blast radius*, not autocomplete.
+
+| Layer | What it does |
+|-------|--------------|
+| 🔍 **Citation enforcement** | A Stop hook grep-validates **every** `file:line` in the transcript against real line numbers. A SubagentStop hook rejects any subagent output missing citations. Unverifiable claims don't survive the session. |
+| 🛡️ **Blast-radius guards** | Pre-edit hooks *block* writes to generated files and gate the highest-risk files. Post-edit hooks resolve each change to a risk tier and to its covering tests via a call-graph artifact. |
+| 🧪 **Regression gates** | A Stop hook diffs test results against a baseline; a handoff-block enforcer hard-fails malformed session state instead of passing it downstream. |
+| 🧭 **Domain skills** | 27 topic folders — dispatcher, autograd, kernels, functionalization, torchgen, Inductor, export, pybind — each with worked examples and a *pitfalls* section written from bugs I actually hit. |
+| 🤝 **Task subagents** | 22 specialists: add-an-operator end-to-end, numeric backward verification via gradcheck, call-chain tracing with verified citations, PR lifecycle, compiler-failure debugging. |
+
+The two largest skills are the ones behind my day job: **`cuda-parity-review` (782 lines)** — diffs an out-of-tree backend against an in-tree reference to catch divergence — and **`opinfo` (566 lines)**, which drives standardized operator test coverage on a custom accelerator.
+
+<details>
+<summary>📐 Working method &nbsp;·&nbsp; measured usage</summary>
+
+<br/>
+
+**Method.** Persistent per-repo memory is the part most people skip. Across my active repos I keep **~59 memory files**: build/CI incantations, architecture maps, bug histories — and a set of `feedback_*` files that encode corrections back into the agent so a mistake happens once. Examples: never force-push without an explicit instruction; confirm before any externally-visible action; build and run to verify a claim before trusting it. Alongside that, per-repo `CLAUDE.md` onboarding docs (Velox 198 lines, Spark+Gluten K8s 189 lines) and permission allowlists tuned per project — 95 rules on the largest.
+
+**Measured across 3 machines, 2026-05-24 → 2026-07-27:**
+
+| Metric | Count |
+|---|---|
+| Project contexts | 19 |
+| Sessions | 55 |
+| Subagent runs | 95 |
+| User turns | 15,741 |
+
+**Automation.** This profile maintains itself. [`update_contributions.py`](scripts/update_contributions.py) polls the GitHub API nightly and rewrites the scoreboard, the merged-project badges, and the contributions table above — with fallbacks for projects whose maintainers merge by cherry-pick or bot-sync rather than the merge button, so a merged PR is never miscounted as closed. A companion job regenerates the LeetCode card. Four workflows, zero manual edits.
+
+</details>
+
+> **Why this is on my résumé and not just a hobby:** the same instincts — verify before you trust, know your blast radius, automate the loop — are what let me land **18 merged PRs** in codebases I didn't write.
 
 ---
 

@@ -1,0 +1,165 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, top=0.3in, bottom=0.2in, left=0.45in, right=0.45in, headheight=0pt, headsep=2pt, footskip=4pt, includeheadfoot]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[pdftex, colorlinks=true, urlcolor=blue, linkcolor=blue]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\urlstyle{rm}
+
+% pdfstartlink-based \href for guaranteed clickable links
+\makeatletter
+\newcommand{\hreflink}[2]{%
+  \leavevmode
+  \pdfstartlink attr{/Border [0 0 0]}%
+    user{/Subtype /Link /A << /S /URI /URI (#1) >>}%
+  {\color{blue}#2}%
+  \pdfendlink
+}
+\let\oldhref\href
+\renewcommand{\href}[2]{\hreflink{#1}{#2}}
+\makeatother
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-11pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+\newcommand{\resumeItem}[2]{
+  \item\small{\textbf{#1}{: #2 \vspace{-1pt}}}
+}
+% ATS-safe: \hfill keeps a single linear text flow (no tabular columns to jumble)
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \textbf{#1}\hfill{#2}\\
+    \textit{\small #3}\hfill\textit{\small #4}\vspace{-4pt}
+}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeDesc}[1]{\item[]\small{#1}\vspace{-3pt}}
+\renewcommand{\labelitemii}{-}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt,topsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%----------AUTO-GENERATED PR COUNTS-----------------
+% Everything between the PRSTATS markers is rewritten daily by
+% scripts/update_contributions.py from the live GitHub API. Do not hand-edit:
+% your changes will be overwritten. To use a count in the body, reference the
+% macro (e.g. \prMerged{}) rather than typing a literal number.
+% <!-- PRSTATS_START -->
+\newcommand{\prMerged}{18}
+\newcommand{\prOpen}{12}
+\newcommand{\prRepos}{8}
+\newcommand{\prMergedProjects}{PyTorch, vLLM, Meta Velox, Apache Spark, and Apache Gluten}
+\newcommand{\prMergedPyTorch}{3}
+\newcommand{\prMergedvLLM}{1}
+\newcommand{\prMergedVelox}{5}
+\newcommand{\prMergedSpark}{4}
+\newcommand{\prMergedGluten}{5}
+\newcommand{\prMergedDuckDB}{0}
+% <!-- PRSTATS_END -->
+
+\begin{document}
+
+%----------HEADING-----------------
+% ATS-safe: centered single-column contact block (linear text extraction)
+\begin{center}
+  {\LARGE \textbf{Brij Raj Kishore}}\\ \vspace{2pt}
+  {\small Staff Software Engineer \;|\; \textbf{C++} \;|\; \textbf{Java} \;|\; \textbf{Python}}\\ \vspace{3pt}
+  \small
+  \href{mailto:brijraj31@gmail.com}{brijraj31@gmail.com} $|$ +91-7906555465 $|$ Noida, Delhi/NCR, India\\
+  \href{https://www.linkedin.com/in/brijrajkishore/}{linkedin.com/in/brijrajkishore} $|$ \href{https://github.com/brijrajk}{github.com/brijrajk}
+\end{center}
+
+%-----------SUMMARY-----------------
+\section{Professional Summary}
+Systems software engineer (\textasciitilde{}6 yrs) in \textbf{high-performance C++, Java, and Python} for ML and data systems. Building a \textbf{PyTorch out-of-tree device backend for low-latency LLM inference}, on a foundation of query-engine internals (Velox, Gluten, Spark), \textbf{JVM} runtimes, and heterogeneous compute (FPGA, CUDA). \textbf{\prMerged{} merged PRs} across \prMergedProjects{}; \prOpen{} open across \prRepos{} repos.
+
+%-----------WORK EXPERIENCE-----------------
+\section{Work Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {ZettaBolt Technologies Pvt. Ltd}{Noida, India}
+    {Senior Member of Technical Staff (Staff Software Engineer)}{December 2021 - Present}
+    \resumeItemListStart
+      \resumeItem{PyTorch OOT Device Backend for LLM Inference}
+        {Building an out-of-tree \textbf{C++ device backend} in PyTorch (PrivateUse1) - operator dispatch, kernel registration, device memory, streams - against the \textbf{OpenReg} reference device ahead of custom silicon; validated via \textbf{OpInfo} and ran \textbf{Llama and BERT inference end-to-end}. Built a \textbf{CUDA-parity testing framework} + CI. Currently building the \textbf{Inductor/Triton codegen path} bringing \textbf{torch.compile} to the device, standalone and through \textbf{vLLM} serving.}
+      \resumeItem{Agent Harness for Accelerator-Backend Development}
+        {Built a domain-specific \textbf{agent harness} (Claude Code) for PyTorch backend work - \textbf{79 files / \textasciitilde{}7K lines}: 27 skill areas, \textbf{22 subagents}, and \textbf{11 hooks} enforcing citation-verified answers, generated-file protection, and blast-radius/test-impact analysis per edit. The \textbf{CUDA-parity} and \textbf{OpInfo} tooling above run on it.}
+      \resumeItem{Spark Query Engine Acceleration via FPGA Offloading}
+        {Achieved \textbf{5x speedup over vanilla Spark} and \textbf{2x over Apache Gluten} by integrating \textbf{Velox (C++)} with an FPGA SDK through a \textbf{Scala} bridge; designed the operator dispatch architecture for Scan, Filter, and Aggregation.}
+      \resumeItem{AMD AOCL Integration on Meta Velox}
+        {Delivered \textbf{5x runtime improvement} on AMD EPYC by integrating AMD Compiler and AOCL into Meta\textquotesingle{}s Velox/Gluten pipeline (\textbf{C++/Scala}); guided by \textbf{profiling} with uProf and Flamegraph.}
+      \resumeItem{Graph Analytics: NVIDIA cuGraph \& TigerGraph}
+        {Achieved \textbf{100x speedup} on PageRank using TigerGraph GSQL with \textbf{NVIDIA CUDA (C++)} and Python; cut pipeline runtime \textbf{40\%} and infra cost \textbf{24\%}.}
+      \resumeItem{ZettaProf - Automated Spark Profiling \& Benchmarking Tool}
+        {\textbf{Reduced Spark debugging time 60\%} by designing and shipping \textbf{ZettaProf} (Scala/Java), an automated profiler adopted \textbf{company-wide}; mentored engineers on its use.}
+      \resumeItem{JVM-to-C++ Hive Offload \& Healthcare ETL on Microsoft Fabric}
+        {Improved Hive query runtime \textbf{20\%} migrating execution kernels from the \textbf{JVM to a C++ backend} for heterogeneous CPU/FPGA dispatch; separately \textbf{cut debugging time \textasciitilde{}70\%} optimizing healthcare pipelines on \textbf{Spark (PySpark/Scala)}, \textbf{Microsoft Fabric}, and \textbf{Azure Data Factory} (join skew, AQE fallback).}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {NXP Semiconductors}{Pune, India}
+    {Software Engineer}{July 2021 - December 2021}
+    \resumeDesc{Ported BT firmware to dual-antenna platform in \textbf{C}; debugged WiFi/BLE driver bugs via GDB; validated via \textbf{unit tests}.}
+
+  \resumeSubheading
+    {Tata Consultancy Services}{Bengaluru, India}
+    {Assistant System Engineer}{Aug 2017 - Jan 2018}
+    \resumeDesc{Developed \textbf{REST API} endpoints (TCS OmniStore POS); raised unit test coverage \textbf{62\% to 70\%} via JUnit and \textbf{CI/CD}.}
+
+\resumeSubHeadingListEnd
+
+%-----------OPEN SOURCE-----------------
+\section{Open Source Contributions \textnormal{\small(\prMerged{} merged, \prOpen{} open across \prRepos{} upstream repos)}}
+\resumeSubHeadingListStart
+  \resumeSubItem{Merged}
+    {\href{https://github.com/pytorch/pytorch}{\textbf{PyTorch}} (\prMergedPyTorch{}) - CUDA device-guard RAII fix on the throwing path, \texttt{LPPoolNd} validation, schema-inference errors; \href{https://github.com/facebookincubator/velox}{\textbf{Velox}} (\prMergedVelox{}) - TPC-DS map-allocation perf, Spark \texttt{transform\_values} registration, Parquet encoding; \href{https://github.com/apache/gluten}{\textbf{Gluten}} (\prMergedGluten{}) - \texttt{KeyGroupedPartitioning} \texttt{MatchError} fix, codec error messaging, test-suite fixes; \href{https://github.com/apache/spark}{\textbf{Spark}} (\prMergedSpark{}) - config/docs fixes; \href{https://github.com/vllm-project/vllm}{\textbf{vLLM}} (\prMergedvLLM{}) - Transformers v5 test gating.}
+  \resumeSubItem{Under review}
+    {PyTorch \texttt{fp16} CPU/GPU parity (\texttt{clamp}, \texttt{torch.where}); Gluten bloom-filter AQE-fallback corruption; Spark structured streaming (\texttt{GroupState}, Protobuf); DuckDB \texttt{*COLUMNS()} resolution.}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \resumeSubItem{ML / AI}{\hspace{1.2em}PyTorch (OOT device backend, PrivateUse1, OpenReg, dispatch, kernel registration, OpInfo, streams), \textbf{torch.compile} (Inductor, Triton), CUDA-parity testing, NVIDIA CUDA, cuGraph, vLLM}
+  \resumeSubItem{Languages}{\hspace{0.5em}C++17, C, \textbf{Java}, Scala, Python, Bash}
+  \resumeSubItem{Query \& Distributed}{\hspace{0.1em}Meta Velox, Apache Gluten, Spark SQL, Hive, DuckDB, Parquet/ORC, Hadoop, Kafka, JVM internals, Concurrency}
+  \resumeSubItem{Hardware \& Tools}{FPGA (Xilinx/AMD), AMD EPYC / AOCL, GDB, Valgrind, uProf, Flamegraph, Docker, Linux, Git, CI/CD}
+  \resumeSubItem{Cloud}{\hspace{2.4em}AWS, Microsoft Fabric, Azure Data Factory}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {National Institute of Technology (NIT Nagpur)}{Nagpur, India}
+    {M.Tech - Computer Science \& Engineering;\quad CGPA: 8.04\,/\,10}{July 2019 - June 2021}
+  \resumeSubheading
+    {GL Bajaj Institute of Technology \& Management}{Greater Noida, India}
+    {B.Tech - Computer Science \& Engineering}{July 2013 - June 2017}
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------------
+\section{Achievements}
+\vspace{2pt}
+\small{Author, \href{https://github.com/brijrajk/pytorch-internals-explained}{\textit{pytorch-internals-explained}} - public series on PyTorch internals (dispatch, autograd, strides/views, CUDA allocator) \quad|\quad GATE CSE 2019 - \textbf{97\textsuperscript{th} Percentile} \quad|\quad Google Code Jam 2020 - \textbf{6,448\,/\,44,434} \quad|\quad TCS CodeVita 2016 - \textbf{414 AIR}}
+
+\end{document}
