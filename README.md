@@ -88,6 +88,19 @@ Optimizer:  "make it correct, then make it fly."   ⚡
   <img src="https://streak-stats.demolab.com?user=brijrajk&theme=github-dark-blue&hide_border=true&ring=58a6ff&fire=ff7c3f&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" width="60%"/>
 </p>
 
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=brijrajk&theme=github-compact&hide_border=true&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff&area=true&area_color=1f6feb" width="100%"/>
+</p>
+
+<!-- Contribution snake — self-hosted from the repo's output branch (reliable, won't rate-limit) -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake.svg"/>
+    <img alt="snake animation" src="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg" width="100%"/>
+  </picture>
+</p>
+
 ---
 
 <!-- ════════════════════ THE PROOF ════════════════════ -->
@@ -227,10 +240,6 @@ Currently building the **systems layer that makes LLM inference fast on custom h
   <img src="assets/leetcode-profile.svg" alt="LeetCode Profile" width="100%"/>
 </p>
 <!-- LEETCODE_STATS_END -->
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/brijrajk/brijrajk/output/github-contribution-grid-snake-dark.svg" alt="snake"/>
-</p>
 
 </details>
 
