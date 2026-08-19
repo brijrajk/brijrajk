@@ -47,7 +47,7 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 <!-- SCOREBOARD_START -->
 <p align="center">
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-19-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-11-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-9-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
 </p>
 <!-- SCOREBOARD_END -->
@@ -169,9 +169,9 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 ### 📦 duckdb/duckdb
 | PR | Description | Status |
 |----|-------------|--------|
-| [#23363](https://github.com/duckdb/duckdb/pull/23363) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | 🔄 Open |
-| [#23366](https://github.com/duckdb/duckdb/pull/23366) | Fix *COLUMNS() false rejection when operator wraps function result | 🔄 Open |
 | [#23104](https://github.com/duckdb/duckdb/pull/23104) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | ❌ Closed |
+| [#23363](https://github.com/duckdb/duckdb/pull/23363) | Fix *COLUMNS() false rejection when operators appear in lambda bodies | ❌ Closed |
+| [#23366](https://github.com/duckdb/duckdb/pull/23366) | Fix *COLUMNS() false rejection when operator wraps function result | ❌ Closed |
 
 ### 📦 google/it-cert-automation-practice
 | PR | Description | Status |
