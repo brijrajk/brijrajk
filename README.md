@@ -47,7 +47,7 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 <!-- SCOREBOARD_START -->
 <p align="center">
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Amerged"><img src="https://img.shields.io/badge/PRs%20Merged-19-2ea043?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
-  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-9-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+  <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk+is%3Aopen"><img src="https://img.shields.io/badge/PRs%20Open-6-1f6feb?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
   <a href="https://github.com/search?type=pullrequests&q=is%3Apr+author%3Abrijrajk"><img src="https://img.shields.io/badge/Upstream%20Repos-8-8957e5?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
 </p>
 <!-- SCOREBOARD_END -->
@@ -156,10 +156,10 @@ Optimizer:  "make it correct, then make it fly."   ⚡
 | [#56469](https://github.com/apache/spark/pull/56469) | [SPARK-57418][DOCS] Add singleVariantColumn option to CSV, JSON, and XML data source options tables | ✅ Merged |
 | [#56675](https://github.com/apache/spark/pull/56675) | [SPARK-47013][SS] Document spark.sql.streaming.minBatchesToRetain config | ✅ Merged |
 | [#56174](https://github.com/apache/spark/pull/56174) | [SPARK-43847][PYTHON] Throw structured error when reading Protobuf descriptor file fails | 🔄 Open |
-| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | 🔄 Open |
-| [#56473](https://github.com/apache/spark/pull/56473) | [SPARK-56367][SS][PYTHON][DOCS] Fix latestOffset docstring, update tutorial signature, and add Trigger.AvailableNow documentation | 🔄 Open |
-| [#56673](https://github.com/apache/spark/pull/56673) | [SPARK-43322][SQL] Document null/empty behavior in explode_outer and posexplode_outer | 🔄 Open |
+| [#56178](https://github.com/apache/spark/pull/56178) | [SPARK-40437][SS][PYTHON] Support string representation of durationMs in GroupState.setTimeoutDuration | ❌ Closed |
 | [#56250](https://github.com/apache/spark/pull/56250) | [SPARK-56561][PYTHON][DOCS] Document order preservation for array_distinct, array_intersect, array_union, array_except | ❌ Closed |
+| [#56473](https://github.com/apache/spark/pull/56473) | [SPARK-56367][SS][PYTHON][DOCS] Fix latestOffset docstring, update tutorial signature, and add Trigger.AvailableNow documentation | ❌ Closed |
+| [#56673](https://github.com/apache/spark/pull/56673) | [SPARK-43322][SQL] Document null/empty behavior in explode_outer and posexplode_outer | ❌ Closed |
 
 ### 📦 aws-samples/aws-etl-orchestrator
 | PR | Description | Status |
